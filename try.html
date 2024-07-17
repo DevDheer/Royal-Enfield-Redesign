@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #page3 {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #EFEAE3;
+            padding: 4vw 0;
+        }
+
+        .elem {
+            height: 150px;
+            width: 100%;
+            position: relative;
+
+            border-bottom: 1px solid #38383864;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 2vw;
+        }
+
+        .elem h2 {
+            font-size: 3vw;
+            position: relative;
+            z-index: 9;
+        }
+
+        .elem .overlay {
+            height: 100%;
+            width: 100%;
+            background-color: orange;
+            position: absolute;
+            left: 0;
+            top: -100%;
+            transition: all ease 0.25s;
+        }
+
+        .elem:hover .overlay {
+            top: 0;
+        }
+
+
+
+        #fixed-image {
+            height: 30vw;
+            width: 24vw;
+            /* background-color: red; */
+            border-radius: 15px;
+            position: fixed;
+            z-index: 99;
+            left: 50%;
+            top: 25%;
+            display: none;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fixed-image"></div>
+    <section class="main">
+        <div id="page3">
+            <div id="elem-container">
+                <div id="elem1" class="elem"
+                    data-image="https://images.unsplash.com/photo-1701001308648-7b731a52b8d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="overlay"></div>
+                    <h2>Makers Studio HOI</h2>
+                </div>
+                <div class="elem"
+                    data-image="https://images.unsplash.com/photo-1700975928909-da4a46227a47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8">
+                    <div class="overlay"></div>
+                    <h2>50th Anniversary</h2>
+                </div>
+                <div class="elem"
+                    data-image="https://images.unsplash.com/photo-1701077137611-9be394bf62f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="overlay"></div>
+                    <h2>NYFW Popup</h2>
+                </div>
+                <div class="elem"
+                    data-image="https://images.unsplash.com/photo-1701014159309-4a8b84faadfe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="overlay"></div>
+                    <h2>Air Force 1 2021</h2>
+                </div>
+                <div class="elem"
+                    data-image="https://images.unsplash.com/photo-1700924546093-f914fd5b8814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="overlay"></div>
+                    <h2>SOHO NYC</h2>
+                </div>
+                <div class="elem"
+                    data-image="https://images.unsplash.com/photo-1700601437860-e66da79cf6d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1OXx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="overlay"></div>
+                    <h2>SOHO 2023</h2>
+                </div>
+                <div class="elem"
+                    data-image="https://images.unsplash.com/photo-1700769025506-6c3dcb9ec9b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2OXx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="overlay"></div>
+                    <h2>Play New Kidvision</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('.main'),
+            smooth: true
+        });
+
+        function page4Animation() {
+            var elemC = document.querySelector("#elem-container")
+            var fixed = document.querySelector("#fixed-image")
+            elemC.addEventListener("mouseenter", function () {
+                fixed.style.display = "block"
+            })
+            elemC.addEventListener("mouseleave", function () {
+                fixed.style.display = "none"
+            })
+
+            var elems = document.querySelectorAll(".elem")
+            elems.forEach(function (e) {
+                e.addEventListener("mouseenter", function () {
+                    var image = e.getAttribute("data-image")
+                    fixed.style.backgroundImage = `url(${image})`
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>
