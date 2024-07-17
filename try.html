@@ -75,7 +75,7 @@
 <body>
 
     <div class="text">
-        <h1>Built like a gun</h1>
+        <h1>Built like a <span> gun</span></h1>
     </div>
 
     <div class="wrapper-horizontal">
@@ -115,15 +115,13 @@
                 }
             })
 
-            gsap.to(".card", {
-                xPercent: -60,
-                ease: "none",
+            tl.to('span', {
                 scrollTrigger: {
-                    trigger: ".wrapper-horizontal",
+                    trigger: "span",
                     pin: true,
                     scrub: 1,
-                    end: "+=3000" // Adjust this value based on the length of the scroll
-                }
+                },
+                scale: 2
             })
     </script>
 </body>

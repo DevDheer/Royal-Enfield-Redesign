@@ -2,6 +2,24 @@
     const locomotiveScroll = new LocomotiveScroll();
 })();
 
+function navbar(){
+    window.addEventListener('wheel', (dets) =>{
+        if(dets.deltaY > 0){
+            gsap.to('.navbar', {
+                transform: ('translateY(-100%)'),
+                duration: .4,
+            })
+        }
+        else{
+            gsap.to('.navbar', {
+                transform: ('translateY(0%)'),
+                duration: .4,
+            })
+        }
+    })
+}
+navbar()
+
 function menutl() {
 const navmenutl = gsap.timeline()
 
@@ -91,14 +109,14 @@ homepagetl.from('.right-home',{
 homepage()
 
 function madeinmadras(){
-gsap.to('.video-sec-1 ', {
+gsap.to('.video-sec-2 ', {
     scrollTrigger: {
-      trigger: '.video-sec-1',
+      trigger: '.video-sec-2',
       start: 'top center',
       end: 'bottom center',
       scrub: true,
     },
-    scale: 1.5 
+    scale: 1.3 
   });
 }
 madeinmadras()
@@ -234,3 +252,13 @@ function accessories(){
 
 }
 accessories()
+
+function gallery(){
+    gsap.to('.images img', {
+        transform: 'translateX(-600%)',
+        duration: 40,
+        repeat: -1,
+        ease: 'none',
+    })
+}
+gallery()
