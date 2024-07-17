@@ -197,8 +197,8 @@ function marqueetl(){
 marqueetl()
 
 function motorcyclesanimation() {
-    var elemC = document.querySelector("#elem-container")
-    var fixed = document.querySelector("#fixed-image")
+    var elemC = document.querySelector(".motorcycles")
+    var fixed = document.querySelector(".motorcycles-image")
     elemC.addEventListener("mouseenter", function () {
         fixed.style.display = "block"
     })
@@ -206,12 +206,31 @@ function motorcyclesanimation() {
         fixed.style.display = "none"
     })
 
-    var elems = document.querySelectorAll(".elem")
+    var elems = document.querySelectorAll(".motorcycles")
     elems.forEach(function (e) {
         e.addEventListener("mouseenter", function () {
             var image = e.getAttribute("data-image")
-            fixed.style.backgroundImage = `url(${image})`
+            fixed.style.backgroundImage = `url(${image})`;
+            })
         })
-    })
+
 }
-motorcyclesanimation()
+
+function accessories(){
+    let next = document.querySelector('#next')
+    let previous = document.querySelector('#previous')
+
+        next.addEventListener('click', () => {
+            gsap.to('.accessory', {
+                transform: 'translateX(-250%)',
+            })
+        })    
+
+        previous.addEventListener('click', () => {
+            gsap.to('.accessory', {
+                transform: 'translateX(0%)',
+            })
+        })  
+
+}
+accessories()
