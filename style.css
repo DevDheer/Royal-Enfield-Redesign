@@ -145,7 +145,9 @@ li{
 }
 .menu-container{
     position: relative;
-    top: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     display: flex;
     align-items: center;
@@ -216,8 +218,53 @@ li{
 .social-menu h1:hover{
     color: #fff;
 }
+.left-menu{
+    width: 50%;
+}
+.right-menu{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 7%;
+    gap: 1vw;
+    width: 50%;
+    height: 100%;
+}
+.video-menu{
+    position: relative;
+}
+#video-gt-menu{
+    position: relative;
+    width: 80%;
+    border-radius: 1vw;
+    object-fit: cover;
+}
 
-
+.overlay-menu{
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 97%;
+    background-color: #0000006f;
+    top: 100%;
+    left: 0;
+    border-radius: 100vw;
+}
+.overlay-menu h1{
+    font-size: 3.5vw;
+    font-weight: 500;
+}
+.overlay-menu h3{
+    font-size: 2vw;
+    font-weight: 200;
+}
+.overlay-menu .btn{
+    width: 9vw;
+    height: 3.4vw;
+}
 /* home-bg */
 
 .bg-home {
@@ -256,8 +303,15 @@ li{
     font-size: 8vw;
     line-height: 7vw;
     font-weight: 500;
+    overflow: hidden;
+    height: 15vw;
 }
 
+.home-container h1 span{
+    position: relative;
+    top: 5%;
+    display: inline-block;
+}
 
 .right-home {
     position: relative;
