@@ -26,19 +26,19 @@
             font-weight: 500;
         }
 
-        .image {
+        .logo-loader {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .image h1 {
+        .logo-loader h1 {
             font-size: 6vw;
             font-weight: 500;
             overflow: hidden;
         }
-        .image h1 span{
+        .logo-loader h1 span{
             position: relative;
             display: inline-block;
         }
@@ -47,13 +47,11 @@
 
 <body>
     <div class="loader">
-
-
-        <div class="image">
+        <div class="logo-loader">
             <h1><span>R</span><span>o</span><span>y</span><span>a</span><span>l</span>
                 <span>E</span><span>n</span><span>f</span><span>i</span><span>e</span><span>l</span><span>d</span></h1>
         </div>
-        <div class="loader-text">
+        <div class="loader-content">
             <h1 id="loader-text">0%</h1>
         </div>
     </div>
@@ -74,7 +72,7 @@
             }, 30);
         });
 
-        gsap.from('.image h1 span', {
+        gsap.from('.logo-loader h1 span', {
             y: 90,
             opacity: 0,
             duration: 2,

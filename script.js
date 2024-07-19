@@ -2,6 +2,83 @@
     const locomotiveScroll = new LocomotiveScroll();
 })();
 
+function loader() {
+    document.addEventListener('DOMContentLoaded', function () {
+        let loader = document.getElementById('loader-text');
+        let percentage = 0;
+
+        let interval = setInterval(function () {
+            percentage++;
+            loader.textContent = percentage + '%';
+
+            if (percentage >= 100) {
+                clearInterval(interval);
+            }
+        }, 25);
+    });
+    let loadertl = gsap.timeline()
+    loadertl.from('.logo-loader h1 span', {
+        y: 90,
+        opacity: 0,
+        duration: 2,
+        ease: 'elastic.in(19,0.9)',
+        stagger: 0.05,
+        delay: 0.2
+    })
+
+    loadertl.to('.logo-loader, #loader-text', {
+        y: 50,
+        opacity: 0,
+        delay: 0.5
+    })
+
+    loadertl.to('.bg-loader-child', {
+        height: 0,
+        stagger: 0.1,
+        duration: .6,
+    })
+
+    loadertl.to('.loader',{
+        display: 'none',
+        delay: -.1,
+        onComplete: homepage
+    }) 
+}
+// loader()
+
+function homepage() {
+    const homepagetl = gsap.timeline()
+
+    homepagetl.from('.bg-home video', {
+        scale: 2,
+        duration: 1.5,
+        ease: "expo.inOut",
+    })
+
+    homepagetl.from('.navbar', {
+        y: -100,
+        opacity: 0,
+        stagger: 0.05,
+    })
+
+    homepagetl.from('.left-home h1 span', {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.05,
+        ease: 'elastic.out(1,0.3)',
+    })
+
+    homepagetl.from('.right-home', {
+        x: 100,
+        opacity: 0,
+        duration: 2,
+        ease: 'elastic.out(10,0.5)',
+        delay: -.9
+    })
+}
+// homepage()
+
 function navbar() {
     window.addEventListener('wheel', (dets) => {
         if (dets.deltaY > 0) {
@@ -84,67 +161,6 @@ function menutl() {
 }
 menutl()
 
-function menutl2() {
-    const menuvideo = document.querySelector('#video-gt-menu')
-    let menutl2 = gsap.timeline()
-    menutl2.to('.overlay-menu', {
-        top: 0,
-        display: 'flex',
-        borderRadius: '1vw',
-        duration: .5,
-        delay: 0,
-        ease: 'elastic.out(1,0.4)',
-    })
-
-    menutl2.from('.overlay-menu', {
-        y: 30,
-        opacity: 0,
-        duration: .5,
-    })
-    menutl2.pause()
-    menuvideo.addEventListener('mouseenter', () => {
-        menutl2.play()
-    })
-    menuvideo.addEventListener('mouseleave', () => {
-        menutl2.reversed()
-    })
-}
-menutl2()
-
-function homepage() {
-    const homepagetl = gsap.timeline()
-
-    homepagetl.from('.bg-home video', {
-        width: '300vw',
-        height: '300vh',
-        duration: 1.5,
-        ease: "expo.inOut",
-    })
-
-    homepagetl.from('.navbar', {
-        y: -100,
-        opacity: 0,
-        stagger: 0.05,
-    })
-
-    homepagetl.from('.left-home h1 span', {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.05,
-        ease: 'elastic.out(1,0.3)',
-    })
-
-    homepagetl.from('.right-home', {
-        x: 100,
-        opacity: 0,
-        duration: 2,
-        ease: 'elastic.out(10,0.5)',
-        delay: -.9
-    })
-}
-homepage()
-
 function madeinmadras() {
 
     gsap.to('.video-sec-2 ', {
@@ -226,7 +242,7 @@ function cursorfollower() {
 }
 cursorfollower()
 
-function marqueetl() {
+function marquee() {
     window.addEventListener('wheel', (dets) => {
         if (dets.deltaY > 0) {
             gsap.to('.marquee', {
@@ -236,7 +252,22 @@ function marqueetl() {
                 ease: 'none',
             })
             gsap.to('.marquee svg', {
-                rotate: '0deg',
+                transform: ('scaleX(1)')
+            })
+            gsap.to('.one-marquee, .three-marquee', {
+                transform: ('translateX(200%)'),
+                repeat: -1,
+                duration: 10,
+                ease: 'none',
+            })
+            gsap.to('.two-marquee', {
+                transform: ('translateX(-200%)'),
+                repeat: -1,
+                duration: 10,
+                ease: 'none',
+            })
+            gsap.to('#move-image', {
+                transform: ('scaleX(1)')
             })
         }
         else {
@@ -247,12 +278,27 @@ function marqueetl() {
                 ease: 'none',
             })
             gsap.to('.marquee svg', {
-                rotate: '360deg',
+                transform: ('scaleX(-1)')
+            })
+            gsap.to('.one-marquee, .three-marquee', {
+                transform: ('translateX(-200%)'),
+                repeat: -1,
+                duration: 10,
+                ease: 'none',
+            })
+            gsap.to('.two-marquee', {
+                transform: ('translateX(200%)'),
+                repeat: -1,
+                duration: 10,
+                ease: 'none',
+            })
+            gsap.to('#move-image', {
+                transform: ('scaleX(-1)')
             })
         }
     })
 }
-marqueetl()
+marquee()
 
 function motorcyclesanimation() {
     var elemC = document.querySelector(".motorcycles")
@@ -302,3 +348,16 @@ function gallery() {
     })
 }
 gallery()
+
+function bikes(){
+    const bike = document.querySelector('.motorcycle')
+    const bikeimage = document.querySelectorAll('.img-motorcycle')
+
+    window.addEventListener('mousemove', (e) => {
+        gsap.to(bikeimage, {
+            x: e.clientX - 600,
+            rotation: e.movementX * 0.5,
+        })
+    })
+}
+bikes()
