@@ -1,8 +1,9 @@
 const Scroll = new LocomotiveScroll(); 
-    
 function scrolltotop() {
     Scroll.scrollTo(0, 0)
 }
+  
+window.scrollTo(0, 0)
 
 function loader() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -96,6 +97,34 @@ function navbar() {
             })
         }
     })
+
+
+    // document.querySelector('.navbar').addEventListener('mouseenter', () => {
+    //     gsap.to('.navbar', {
+    //         width:'100vw',
+    //         duration: .4,
+    //     })
+    //     gsap.to('.navbar h1', {
+    //         display:'block',
+    //         duration: .4,
+    //     })
+    // })
+
+    // document.querySelector('.navbar').addEventListener('mouseleave', () => {
+    //         gsap.to('.navbar', {
+    //             width:'10vw',
+    //             borderRadius: '1vw',
+    //             duration: .4,
+    //         })
+    //         gsap.to('.logo img', {
+    //             width:'7vw'
+    //         })
+    //         gsap.to('.navbar h1', {
+    //             display:'none',
+    //             duration: .4,
+    //             delay: -.4,
+    //         })
+    // })
 }
 navbar()
 
@@ -226,11 +255,64 @@ function scrolltrigger() {
         stagger: 0.05,
         ease: 'elastic.out(1,0.5)',
     })
-
     // sec-3
+
+    var sec3tl = gsap.timeline({scrollTrigger:{
+        trigger:".sec-3",
+       //  markers:true,
+        start:"50% 50%",
+        end:"150% 50%",
+        scrub:2,
+        pin:true
+    }});
+    sec3tl
+    .to(".center-sec-3",{
+       height: "100vh",
+    },'a')
+    .to(".top-sec-3",{
+        top: "-50%",
+     },'a')
+     .to(".bottom-sec-3",{
+        bottom: "-50%",
+     },'a')
+    .to("#top-h1",{
+        top: "60%"
+     },'a')
+     .to("#bottom-h1",{
+        bottom: "-30%"
+     },'a')
+    .to("#center-h1",{
+       top: "-30%"
+    },'a')
+    .from(".center-sec-3",{
+       delay: -0.2,
+       opacity: 0,
+       y: "100%"
+    })
+    .from(".text-sec-3",{
+       delay: -0.2,
+       opacity: 0,
+       y: "100%"
+    })
+    .from("#arrival-1",{
+       delay: -0.2,
+       stagger: 0.2,
+       x: "-100%",
+       opacity: 0
+    })
+    
+    .from("#arrival-2, #arrival-3",{
+       delay: -0.4,
+       stagger: 0.2,
+       x: "100%",
+       opacity: 0
+    })
+
+
+    // sec-4
     gsap.from('.accessory', {
         scrollTrigger: {
-            trigger: ".sec-3",
+            trigger: ".sec-4",
             scrub: 1,
             start: 'top center',
             end: "top 100%",
@@ -245,7 +327,7 @@ function scrolltrigger() {
 
     gsap.from('.header-accessories, .heading, .arrows', {
         scrollTrigger: {
-            trigger: ".sec-3",
+            trigger: ".sec-4",
             scrub: 1,
             start: 'top center',
             end: "top 100%",
@@ -257,10 +339,10 @@ function scrolltrigger() {
         scale: 0,
     });
 
-    // sec-4
-    gsap.from('.sec-4 h1, .sec-4 img', {
+    // sec-5
+    gsap.from('.sec-5 h1, .sec-5 img', {
         scrollTrigger: {
-            trigger: ".sec-4",
+            trigger: ".sec-5",
             scrub: 1,
             start: 'top center',
             end: "top 100%",
@@ -272,10 +354,10 @@ function scrolltrigger() {
         ease: 'elastic.out(1,1)',
     });
 
-    // sec-5
-    gsap.from('.header-sec-5', {
+    // sec-6
+    gsap.from('.header-sec-6', {
         scrollTrigger: {
-            trigger: ".sec-5",
+            trigger: ".sec-6",
             scrub: 1,
             start: 'top center',
             end: "top 100%",
@@ -285,9 +367,9 @@ function scrolltrigger() {
         ease: 'elastic.out(1,0.9)',
     });
 
-    gsap.from('.sec-5 img', {
+    gsap.from('.sec-6 img', {
         scrollTrigger: {
-            trigger: ".sec-5",
+            trigger: ".sec-6",
             start: 'top center',
             end: "top 100%",
             scrub: true,
@@ -302,7 +384,7 @@ function scrolltrigger() {
         zIndex: 1,
         duration: .5,
         scrollTrigger: {
-            trigger: '.sec-5',
+            trigger: '.sec-6',
             start: 'bottom 100vw',
             end: ' bottom 100vw',
             scrub: true
@@ -311,7 +393,7 @@ function scrolltrigger() {
 
     gsap.from('.bottom-top h1 span', {
         scrollTrigger: {
-            trigger: '.sec-5',
+            trigger: '.sec-6',
             start: 'bottom 130vw',
             end: ' bottom 100%',
             scrub: 2,
@@ -324,7 +406,7 @@ function scrolltrigger() {
 
     gsap.from('.bottom-bottom, .bottom-top', {
         scrollTrigger: {
-            trigger: '.sec-5',
+            trigger: '.sec-6',
             start: 'bottom 130vw',
             end: ' bottom 100%',
             scrub: 2,
@@ -335,7 +417,6 @@ function scrolltrigger() {
     })
 }
 scrolltrigger()
-
 
 function cursorfollower() {
     let cursorfollower = document.querySelector('.cursor-follower')
@@ -411,7 +492,7 @@ function marquee() {
                 ease: 'none',
             })
             gsap.to('.marquee svg', {
-                transform: ('scaleX(1)')
+                rotate: '0deg'
             })
             gsap.to('.one-marquee, .three-marquee', {
                 transform: ('translateX(200%)'),
@@ -424,9 +505,6 @@ function marquee() {
                 repeat: -1,
                 duration: 10,
                 ease: 'none',
-            })
-            gsap.to('#move-image', {
-                transform: ('scaleX(1)')
             })
         }
         else {
@@ -437,7 +515,7 @@ function marquee() {
                 ease: 'none',
             })
             gsap.to('.marquee svg', {
-                transform: ('scaleX(-1)')
+                rotate: '360deg'
             })
             gsap.to('.one-marquee, .three-marquee', {
                 transform: ('translateX(-200%)'),
@@ -450,9 +528,6 @@ function marquee() {
                 repeat: -1,
                 duration: 10,
                 ease: 'none',
-            })
-            gsap.to('#move-image', {
-                transform: ('scaleX(-1)')
             })
         }
     })
@@ -500,8 +575,8 @@ accessories()
 
 function gallery() {
     gsap.to('.images img', {
-        transform: 'translateX(-600%)',
-        duration: 40,
+        transform: 'translateX(-700%)',
+        duration: 45,
         repeat: -1,
         ease: 'none',
     })
@@ -520,3 +595,4 @@ function bikes() {
     })
 }
 bikes()
+
