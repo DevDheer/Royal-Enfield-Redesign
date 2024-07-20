@@ -54,7 +54,7 @@ body {
     height: 100vh;
     z-index: 100999;
     background-color: #101010;
-    display: flex;
+    display: none;
     align-items: flex-end;
     justify-content: flex-end;
     overflow: hidden;
@@ -735,7 +735,7 @@ li {
 }
 
 #top-h1{
-    bottom: 35%;
+    bottom: 50vw;
     font-weight: 200;
     font-size: 22vw;
     width: 100%;
@@ -746,7 +746,7 @@ li {
 }
 
 #bottom-h1{
-    top: 16.5% !important;
+    top: 5vw !important;
     font-weight: 200;
     font-size: 22vw;
     width: 100%;

@@ -47,7 +47,7 @@ function loader() {
         onComplete: homepage
     })
 }
-loader()
+// loader()
 
 function homepage() {
     const homepagetl = gsap.timeline()
@@ -80,7 +80,7 @@ function homepage() {
         delay: -.9
     })
 }
-homepage()
+// homepage()
 
 function navbar() {
     window.addEventListener('wheel', (dets) => {
@@ -270,20 +270,17 @@ function scrolltrigger() {
        height: "100vh",
     },'a')
     .to(".top-sec-3",{
-        top: "-50%",
+        top: "-50vw",
      },'a')
      .to(".bottom-sec-3",{
-        bottom: "-50%",
+        bottom: "-50vw",
      },'a')
     .to("#top-h1",{
-        top: "60%"
+        bottom: "60vw"
      },'a')
      .to("#bottom-h1",{
-        bottom: "-30%"
+        top: "20vw"
      },'a')
-    .to("#center-h1",{
-       top: "-30%"
-    },'a')
     .from(".center-sec-3",{
        delay: -0.2,
        opacity: 0,
