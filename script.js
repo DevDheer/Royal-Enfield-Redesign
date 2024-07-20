@@ -1,8 +1,8 @@
-const Scroll = new LocomotiveScroll(); 
+const Scroll = new LocomotiveScroll();
 function scrolltotop() {
     Scroll.scrollTo(0, 0)
 }
-  
+
 window.scrollTo(0, 0)
 
 function loader() {
@@ -198,7 +198,7 @@ function scrolltrigger() {
             trigger: '.sec-1',
             start: 'top 50%',
             end: 'bottom bottom',
-            scrub: true,
+            scrub: 3,
         },
         y: 100,
         opacity: 0,
@@ -212,7 +212,7 @@ function scrolltrigger() {
             trigger: '.sec-1',
             start: 'top 80%',
             end: 'bottom bottom',
-            scrub: true,
+            scrub: 2,
         },
         y: 100,
         opacity: 0,
@@ -237,7 +237,7 @@ function scrolltrigger() {
             trigger: '.sec-2',
             start: 'top 90%',
             end: 'bottom 100%',
-            scrub: true,
+            scrub: 1,
         },
         color: '#fff',
         stagger: 0.1
@@ -249,6 +249,7 @@ function scrolltrigger() {
             scrub: 1,
             start: 'top center',
             end: "top 100%",
+            scrub: 3,
         },
         y: 90,
         opacity: 0,
@@ -257,53 +258,55 @@ function scrolltrigger() {
     })
     // sec-3
 
-    var sec3tl = gsap.timeline({scrollTrigger:{
-        trigger:".sec-3",
-       //  markers:true,
-        start:"50% 50%",
-        end:"150% 50%",
-        scrub:2,
-        pin:true
-    }});
+    var sec3tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".sec-3",
+            //  markers:true,
+            start: "50% 50%",
+            end: "150% 50%",
+            scrub: 2,
+            pin: true
+        }
+    });
     sec3tl
-    .to(".center-sec-3",{
-       height: "100vh",
-    },'a')
-    .to(".top-sec-3",{
-        top: "-50vw",
-     },'a')
-     .to(".bottom-sec-3",{
-        bottom: "-50vw",
-     },'a')
-    .from("#top-h1",{
-        top: "30vw"
-     },'a')
-     .from("#bottom-h1",{
-        top: "5vw"
-     },'a')
-    .from(".center-sec-3",{
-       delay: -0.2,
-       opacity: 0,
-       y: "100%"
-    })
-    .from(".text-sec-3",{
-       delay: -0.2,
-       opacity: 0,
-       y: "100%"
-    })
-    .from("#arrival-1",{
-       delay: -0.2,
-       stagger: 0.2,
-       x: "-100%",
-       opacity: 0
-    })
-    
-    .from("#arrival-2, #arrival-3",{
-       delay: -0.4,
-       stagger: 0.2,
-       x: "100%",
-       opacity: 0
-    })
+        .to(".center-sec-3", {
+            height: "100vh",
+        }, 'a')
+        .to(".top-sec-3", {
+            top: "-50vw",
+        }, 'a')
+        .to(".bottom-sec-3", {
+            bottom: "-50vw",
+        }, 'a')
+        .from("#top-h1", {
+            top: "20vw"
+        }, 'a')
+        .from("#bottom-h1", {
+            top: "-4vw"
+        }, 'a')
+        .from(".center-sec-3", {
+            delay: -0.2,
+            opacity: 0,
+            y: "100%"
+        })
+        .from(".text-sec-3", {
+            delay: -0.2,
+            opacity: 0,
+            y: "100%"
+        })
+        .from("#arrival-1", {
+            delay: -0.2,
+            stagger: 0.2,
+            x: "-100%",
+            opacity: 0
+        })
+
+        .from("#arrival-2, #arrival-3", {
+            delay: -0.4,
+            stagger: 0.2,
+            x: "100%",
+            opacity: 0
+        })
 
 
     // sec-4
@@ -313,6 +316,7 @@ function scrolltrigger() {
             scrub: 1,
             start: 'top center',
             end: "top 100%",
+            scrub: 3,
         },
         y: 100,
         opacity: 0,
@@ -328,6 +332,7 @@ function scrolltrigger() {
             scrub: 1,
             start: 'top center',
             end: "top 100%",
+            scrub: 3,
         },
         y: 100,
         opacity: 0,
@@ -343,6 +348,7 @@ function scrolltrigger() {
             scrub: 1,
             start: 'top center',
             end: "top 100%",
+            scrub: 3,
         },
         y: 100,
         opacity: 0,
@@ -364,12 +370,12 @@ function scrolltrigger() {
         ease: 'elastic.out(1,0.9)',
     });
 
-    gsap.from('.sec-6 img', {
+    gsap.from('.row-image img', {
         scrollTrigger: {
             trigger: ".sec-6",
             start: 'top center',
             end: "top 100%",
-            scrub: true,
+            scrub: 3,
         },
         y: 100,
         opacity: 0,
@@ -417,8 +423,8 @@ scrolltrigger()
 
 function cursorfollower() {
     let cursorfollower = document.querySelector('.cursor-follower')
-    let cursoreffect1 = document.querySelectorAll('.left-home h1, .right-home svg')
-    let cursoreffect2 = document.querySelectorAll('a')
+    let cursoreffect1 = document.querySelectorAll('.left-home h1, .right-home svg, img')
+    let cursoreffect2 = document.querySelectorAll('a, button')
 
     window.addEventListener('mousemove', (e) => {
         gsap.to(cursorfollower, {
@@ -435,10 +441,10 @@ function cursorfollower() {
     cursoreffect1.forEach(cursor1 => {
         cursor1.addEventListener("mouseenter", () => {
             gsap.to(cursorfollower, {
-                width: "4vw",
-                height: "4vw",
+                width: "3vw",
+                height: "3vw",
                 rotate: '360deg',
-                borderRadius: '1vw',
+                borderRadius: '0.3vw',
                 duration: 0.2,
             });
         });
@@ -497,7 +503,7 @@ function marquee() {
                 duration: 10,
                 ease: 'none',
             })
-            gsap.to('.two-marquee', {
+            gsap.to('.two-marquee, .four-marquee', {
                 transform: ('translateX(-200%)'),
                 repeat: -1,
                 duration: 10,
@@ -520,7 +526,7 @@ function marquee() {
                 duration: 10,
                 ease: 'none',
             })
-            gsap.to('.two-marquee', {
+            gsap.to('.two-marquee, .four-marquee', {
                 transform: ('translateX(200%)'),
                 repeat: -1,
                 duration: 10,
@@ -570,16 +576,6 @@ function accessories() {
 }
 accessories()
 
-function gallery() {
-    gsap.to('.images img', {
-        transform: 'translateX(-700%)',
-        duration: 45,
-        repeat: -1,
-        ease: 'none',
-    })
-}
-gallery()
-
 function bikes() {
     const bike = document.querySelector('.motorcycle')
     const bikeimage = document.querySelectorAll('.img-motorcycle')
@@ -593,3 +589,166 @@ function bikes() {
 }
 bikes()
 
+function gallery() {
+    document.querySelectorAll('#gallery-img').forEach(galleryimg => {
+        galleryimg.addEventListener('mouseenter', () => {
+            gsap.to('#gallery-img', {
+                scale: 0.9,
+            })
+        })
+    })
+
+    document.querySelectorAll('#gallery-img').forEach(galleryimg => {
+        galleryimg.addEventListener('mouseleave', () => {
+            gsap.to('#gallery-img', {
+                scale: 1,
+            })
+        })
+    })
+
+    const gallery1 = document.querySelectorAll('.gallery-img1')
+    const gallery2 = document.querySelectorAll('.gallery-img2')
+    const gallery3 = document.querySelectorAll('.gallery-img3')
+    const gallery4 = document.querySelectorAll('.gallery-img4')
+
+    // gallery 1
+
+    gallery1.forEach(gallery1img => {
+        gallery1img.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#6A5542',
+            })
+        })
+    })
+
+    gallery1.forEach(gallery1img => {
+        gallery1img.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+
+    // gallery 2
+    
+    gallery2.forEach(gallery2img => {
+        gallery2img.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#303030',
+            })
+        })
+    })
+
+    gallery2.forEach(gallery2img => {
+        gallery2img.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+
+    // gallery 3
+    
+    gallery3.forEach(gallery3img => {
+        gallery3img.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#002E21',
+            })
+        })
+    })
+
+    gallery3.forEach(gallery3img => {
+        gallery3img.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+
+    // gallery 4
+    
+    gallery4.forEach(gallery4img => {
+        gallery4img.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#760607',
+            })
+        })
+    })
+
+    gallery4.forEach(gallery4img => {
+        gallery4img.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+
+}
+gallery()
+
+function section5(){
+    const dec1 = document.querySelectorAll('.one-move')
+    const dec2 = document.querySelectorAll('.two-move')
+    const dec3 = document.querySelectorAll('.three-move')
+
+    // dec 1
+    
+    dec1.forEach(dec1bg => {
+        dec1bg.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#002E21',
+            })
+        })
+    })
+
+    dec1.forEach(dec1bg => {
+        dec1bg.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+
+    // dec 2
+    
+    dec2.forEach(dec2bg => {
+        dec2bg.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#6A5542',
+            })
+        })
+    })
+
+    dec2.forEach(dec2bg => {
+        dec2bg.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+
+    // dec 3
+    
+    dec3.forEach(dec3bg => {
+        dec3bg.addEventListener('mouseenter', () => {
+            gsap.to('.main', {
+                backgroundColor: '#303030',
+            })
+        })
+    })
+
+    dec3.forEach(dec3bg => {
+        dec3bg.addEventListener('mouseleave', () => {
+            
+        gsap.to('.main', {
+            backgroundColor: '#101010',
+        })
+        })
+    })
+}

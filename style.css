@@ -697,7 +697,7 @@ li {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: #010101;
+    background-color: #01140f;
     color: #fff;
 }
 
@@ -736,9 +736,7 @@ li {
     line-height: 20vw;
     width: 100%;
     position: absolute;
-    top: -50vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -10vw;
 }
 
 #bottom-h1{
@@ -747,9 +745,7 @@ li {
     line-height: 20vw;
     width: 100%;
     position: absolute;
-    top: 50vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10vw;
 }
 
 .content-sec-3{
@@ -987,10 +983,11 @@ li {
 /* section 5 */
 
 .sec-5 {
-    height: 60vh;
+    height: 70vw;
     width: 100vw;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 1vw;
 }
@@ -1027,19 +1024,30 @@ li {
 
 .one-move {
     position: relative;
+    top: -10vw;
     background-color: #6A5542;
+    transform: rotate(15deg);
 }
 
 .two-move {
     position: relative;
+    top: 10vw;
     background-color: #303030;
+    transform: rotate(-20deg);
 }
 
 .three-move {
     position: relative;
+    top: 10vw;
     background-color: #002E21;
+    transform: rotate(10deg);
 }
-
+.four-move {
+    position: relative;
+    left: 30vw;
+    background-color: #F1A501;
+    transform: rotate(25deg);
+}
 .two-marquee {
     transform: translateX(-20%);
 }
@@ -1051,7 +1059,7 @@ li {
 /* section 6 */
 
 .sec-6 {
-    height: 120vh;
+    height: 135vw;
     width: 100%;
     padding: 2vw;
     overflow: hidden;
@@ -1082,21 +1090,30 @@ li {
 }
 
 .gallery-container {
+    width: 100vw;
     margin-top: 1vw;
     display: flex;
-}
-
-.images {
-    display: flex;
     align-items: center;
-    gap: 1vw;
+    justify-content: center;
+}
+
+.images-gallery {
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 90vh;
+    gap: 2vw;
+    width: 80vw;
 }
 
-.images img {
-    width: 30%;
+.row-image{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2vw;
 }
-
+#gallery-img {
+    width: 100%;
+}
 
 /* Footer */
 .footer {
