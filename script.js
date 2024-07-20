@@ -1,6 +1,8 @@
-(function () {
-    const locomotiveScroll = new LocomotiveScroll();
-})();
+const Scroll = new LocomotiveScroll(); 
+    
+function scrolltotop() {
+    Scroll.scrollTo(0, 0)
+}
 
 function loader() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -38,11 +40,11 @@ function loader() {
         duration: .6,
     })
 
-    loadertl.to('.loader',{
+    loadertl.to('.loader', {
         display: 'none',
         delay: -.1,
         onComplete: homepage
-    }) 
+    })
 }
 // loader()
 
@@ -129,7 +131,11 @@ function menutl() {
         duration: .5,
         stagger: 0.05,
     })
-
+    navmenutl.from('.video-menu', {
+        scale: 0,
+        opacity: 0,
+        duration: .5,
+    })
     navmenutl.from('.social-menu a, .social-menu h1', {
         y: 30,
         opacity: 0,
@@ -138,13 +144,7 @@ function menutl() {
         delay: -.5
     })
 
-    navmenutl.from('.video-menu', {
-        width: 0,
-        height: 0,
-        opacity: 0,
-        duration: .5,
-        ease: 'elastic.out(1,0.4)',
-    })
+
 
     navmenutl.pause()
 
@@ -161,8 +161,38 @@ function menutl() {
 }
 menutl()
 
-function madeinmadras() {
+function scrolltrigger() {
 
+    // sec-1
+    gsap.from('.motorcycles', {
+        scrollTrigger: {
+            trigger: '.sec-1',
+            start: 'top 50%',
+            end: 'bottom bottom',
+            scrub: true,
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'elastic.out(1,0.9',
+    });
+
+    gsap.from('.move', {
+        scrollTrigger: {
+            trigger: '.sec-1',
+            start: 'top 80%',
+            end: 'bottom bottom',
+            scrub: true,
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'elastic.out(1,0.9',
+    });
+
+    // sec-2
     gsap.to('.video-sec-2 ', {
         scrollTrigger: {
             trigger: '.video-sec-2',
@@ -173,9 +203,138 @@ function madeinmadras() {
         scale: 1.5,
     });
 
+    gsap.to('.sec-2 h1 span', {
+        scrollTrigger: {
+            trigger: '.sec-2',
+            start: 'top 90%',
+            end: 'bottom 100%',
+            scrub: true,
+        },
+        color: '#fff',
+        stagger: 0.1
+    });
 
+    gsap.from('.sec-2 p, .sec-2 .btn', {
+        scrollTrigger: {
+            trigger: ".sec-2",
+            scrub: 1,
+            start: 'top center',
+            end: "top 100%",
+        },
+        y: 90,
+        opacity: 0,
+        stagger: 0.05,
+        ease: 'elastic.out(1,0.5)',
+    })
+
+    // sec-3
+    gsap.from('.accessory', {
+        scrollTrigger: {
+            trigger: ".sec-3",
+            scrub: 1,
+            start: 'top center',
+            end: "top 100%",
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1,
+        ease: 'elastic.out(1,0.9)',
+    });
+
+
+    gsap.from('.header-accessories, .heading, .arrows', {
+        scrollTrigger: {
+            trigger: ".sec-3",
+            scrub: 1,
+            start: 'top center',
+            end: "top 100%",
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1,
+        scale: 0,
+    });
+
+    // sec-4
+    gsap.from('.sec-4 h1, .sec-4 img', {
+        scrollTrigger: {
+            trigger: ".sec-4",
+            scrub: 1,
+            start: 'top center',
+            end: "top 100%",
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 1.5,
+        ease: 'elastic.out(1,1)',
+    });
+
+    // sec-5
+    gsap.from('.header-sec-5', {
+        scrollTrigger: {
+            trigger: ".sec-5",
+            scrub: 1,
+            start: 'top center',
+            end: "top 100%",
+        },
+        opacity: 0,
+        scale: 0,
+        ease: 'elastic.out(1,0.9)',
+    });
+
+    gsap.from('.sec-5 img', {
+        scrollTrigger: {
+            trigger: ".sec-5",
+            start: 'top center',
+            end: "top 100%",
+            scrub: true,
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.3,
+    });
+
+    // footer
+    gsap.to('.footer', {
+        zIndex: 1,
+        duration: .5,
+        scrollTrigger: {
+            trigger: '.sec-5',
+            start: 'bottom 100vw',
+            end: ' bottom 100vw',
+            scrub: true
+        },
+    })
+
+    gsap.from('.bottom-top h1 span', {
+        scrollTrigger: {
+            trigger: '.sec-5',
+            start: 'bottom 130vw',
+            end: ' bottom 100%',
+            scrub: 2,
+        },
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: .5,
+    })
+
+    gsap.from('.bottom-bottom, .bottom-top', {
+        scrollTrigger: {
+            trigger: '.sec-5',
+            start: 'bottom 130vw',
+            end: ' bottom 100%',
+            scrub: 2,
+        },
+        y: 100,
+        opacity: 0,
+        duration: .5,
+    })
 }
-madeinmadras()
+scrolltrigger()
 
 
 function cursorfollower() {
@@ -349,7 +508,7 @@ function gallery() {
 }
 gallery()
 
-function bikes(){
+function bikes() {
     const bike = document.querySelector('.motorcycle')
     const bikeimage = document.querySelectorAll('.img-motorcycle')
 

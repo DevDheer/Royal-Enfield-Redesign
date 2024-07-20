@@ -18,7 +18,6 @@ html,
 body {
     min-height: 100%;
     width: 100%;
-    background-color: #101010;
     font-family: 'rush';
     color: #fff;
     cursor: url(assets/cursor.png), auto;
@@ -30,14 +29,21 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #fff;
     border-radius: 20px;
 }
-
+::-webkit-scrollbar-track{
+    background-color: #101010;
+}
+.main{
+    background-color: #101010;
+    margin-bottom: 100vh;
+    overflow: hidden;
+}
 /* loader */
 .loader {
     position: fixed;
@@ -116,7 +122,25 @@ li {
 .home {
     height: 120vh;
 }
-
+.hover-text{
+    position: relative;
+}
+.hover-text::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 70%;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s ease;
+}
+.hover-text:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
 /* navbar */
 
 .navbar {
@@ -574,6 +598,7 @@ li {
     font-size: 5vw;
     line-height: 5vw;
     font-weight: 300;
+    color: #4D4D4D;
 }
 
 .sec-2 p {
@@ -850,7 +875,7 @@ li {
 }
 .three-move{
     position: relative;
-    background-color: #213A28;
+    background-color: #002E21;
 }
 .two-marquee{
     transform: translateX(-20%);
@@ -861,7 +886,7 @@ li {
 /* section 5 */
 
 .sec-5 {
-    height: 110vh;
+    height: 120vh;
     width: 100%;
     padding: 2vw;
     overflow: hidden;
@@ -900,6 +925,7 @@ li {
     display: flex;
     align-items: center;
     gap: 1vw;
+    margin-bottom: 90vh;
 }
 
 .images img {
@@ -909,6 +935,147 @@ li {
 
 /* Footer */
 .footer{
+    position: fixed;
     height: 100vh;
     width: 100vw;
+    bottom: 0;
+    left: 0;
+    padding: 2vw;
+    overflow: hidden;
+    background-color: #010101;
+    z-index: -99;
+}
+
+.footer-header{
+    display: flex;
+    align-items: center;
+    width: 95vw;
+    height: 10vh;
+    border-bottom: 1px solid #fff;
+}
+
+.footer-header h1{
+    font-size: 2vw;
+    font-weight: 200;
+}
+
+.footer-header svg{
+    transform: rotate(-20deg);
+}
+
+.footer-mid{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 2vw;
+}
+
+.footer-container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.footer-child-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2vw;
+    font-family: 'balo';
+}
+
+#heading-footer{
+    position: relative;
+    font-size: 2.5vw;
+    color: #a5a5a5;
+    font-weight: 300;
+    transition: color .4s ease;
+}
+#heading-footer:hover{
+    color: #fff;
+}
+.col-footer li a{
+    font-size: 1.2vw;
+}
+
+.col-footer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: .7vw;
+}
+
+.social-col-footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 1vw;
+}
+.social-icon{
+    position: relative;
+    width: 4vw;
+    height: 4vw;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.social-icon::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: -50%;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: top .4s ease, left .4s ease;
+}
+.social-icon:hover::after{
+    top: 0;
+    left: 0;
+}
+.social-icon img{
+    height: 1.5vw;
+    mix-blend-mode: difference;
+    z-index: 99;
+}
+.bottom{
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+.bottom-top{
+    position: relative;
+    top: 25%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+}
+
+.bottom-top h1{
+    position: relative;
+    top: 2vw;
+    font-size: 17vw;
+    line-height: 13vw;
+    font-weight: 500;
+    color: #B80B0C;
+}
+.bottom-top h1 span{
+    position: relative;
+    display: inline-block;
+}
+.bottom-bottom{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 8vw;
+    font-family: 'balo';
+    font-size: 1vw;
 }
