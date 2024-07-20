@@ -46,7 +46,7 @@ function loader() {
         onComplete: homepage
     })
 }
-// loader()
+loader()
 
 function homepage() {
     const homepagetl = gsap.timeline()
@@ -79,7 +79,7 @@ function homepage() {
         delay: -.9
     })
 }
-// homepage()
+homepage()
 
 function navbar() {
     window.addEventListener('wheel', (dets) => {
