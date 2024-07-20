@@ -54,7 +54,7 @@ body {
     height: 100vh;
     z-index: 100999;
     background-color: #101010;
-    display: none;
+    display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     overflow: hidden;
