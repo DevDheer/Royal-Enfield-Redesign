@@ -54,7 +54,7 @@ body {
     height: 100vh;
     z-index: 100999;
     background-color: #101010;
-    display: none;
+    display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     overflow: hidden;
@@ -66,7 +66,6 @@ body {
     line-height: 2vw;
     font-weight: 500;
 }
-
 .logo-loader {
     position: absolute;
     top: 50%;
@@ -217,6 +216,9 @@ li {
     transition: 0.5s;
 }
 
+.menu-navigate .hover-navigate span:nth-child(5) {
+    transition: 0.6s;
+}
 
 
 .menu-navigate .hover-navigate2 {
@@ -248,6 +250,10 @@ li {
 
 .menu-navigate .hover-navigate2 span:nth-child(4) {
     transition: 0.6s;
+}
+
+.menu-navigate .hover-navigate2 span:nth-child(5) {
+    transition: 0.7s;
 }
 
 /* menu */
