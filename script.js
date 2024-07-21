@@ -3,7 +3,7 @@ function scrolltotop() {
     Scroll.scrollTo(0, 0)
 }
 
-window.scrollTo(0, 0)
+// Scroll.scrollTo(0, 0)
 
 function loader() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -47,7 +47,7 @@ function loader() {
         onComplete: homepage
     })
 }
-loader()
+// loader()
 
 function homepage() {
     const homepagetl = gsap.timeline()
@@ -80,7 +80,7 @@ function homepage() {
         delay: -.9
     })
 }
-homepage()
+// homepage()
 
 function navbar() {
     window.addEventListener('wheel', (dets) => {
@@ -342,20 +342,46 @@ function scrolltrigger() {
     });
 
     // sec-5
-    gsap.from('.sec-5 h1, .sec-5 img', {
+
+    gsap.from('.goa-garage-cafe', {
         scrollTrigger: {
             trigger: ".sec-5",
+            start: 'top 20%',
+            end: 'bottom 100%',
             scrub: 1,
-            start: 'top center',
-            end: "top 100%",
-            scrub: 3,
+            pin: true,
         },
-        y: 100,
-        opacity: 0,
-        stagger: 0.05,
-        duration: 1.5,
-        ease: 'elastic.out(1,1)',
-    });
+        rotate: 36,
+        scale: 0,
+    })  
+
+    gsap.to('.sec5-bgs', {
+        scrollTrigger: {
+            trigger: ".sec-5-bgs-container",
+            start: 'top -10vw',
+            end: 'bottom 100vw',
+            scrub: 5,
+            pin: true,
+        },
+        x: "-100%",
+        duration: 1,
+    }) 
+
+    // sec-6
+    // gsap.from('.sec-5 h1, .sec-5 img', {
+    //     scrollTrigger: {
+    //         trigger: ".sec-5",
+    //         scrub: 1,
+    //         start: 'top center',
+    //         end: "top 100%",
+    //         scrub: 3,
+    //     },
+    //     y: 100,
+    //     opacity: 0,
+    //     stagger: 0.05,
+    //     duration: 1.5,
+    //     ease: 'elastic.out(1,1)',
+    // });
 
     // sec-6
     gsap.from('.header-sec-6', {
@@ -498,7 +524,7 @@ function marquee() {
                 rotate: '0deg'
             })
             gsap.to('.one-marquee, .three-marquee', {
-                transform: ('translateX(200%)'),
+                transform: ('translateX(100%)'),
                 repeat: -1,
                 duration: 10,
                 ease: 'none',
@@ -521,7 +547,7 @@ function marquee() {
                 rotate: '360deg'
             })
             gsap.to('.one-marquee, .three-marquee', {
-                transform: ('translateX(-200%)'),
+                transform: ('translateX(-100%)'),
                 repeat: -1,
                 duration: 10,
                 ease: 'none',
@@ -533,6 +559,19 @@ function marquee() {
                 ease: 'none',
             })
         }
+    })
+
+    gsap.to('.one-marquee, .three-marquee', {
+        transform: ('translateX(100%)'),
+        repeat: -1,
+        duration: 10,
+        ease: 'none',
+    })
+    gsap.to('.two-marquee, .four-marquee', {
+        transform: ('translateX(-200%)'),
+        repeat: -1,
+        duration: 10,
+        ease: 'none',
     })
 }
 marquee()
@@ -690,65 +729,3 @@ function gallery() {
 }
 gallery()
 
-function section5(){
-    const dec1 = document.querySelectorAll('.one-move')
-    const dec2 = document.querySelectorAll('.two-move')
-    const dec3 = document.querySelectorAll('.three-move')
-
-    // dec 1
-    
-    dec1.forEach(dec1bg => {
-        dec1bg.addEventListener('mouseenter', () => {
-            gsap.to('.main', {
-                backgroundColor: '#002E21',
-            })
-        })
-    })
-
-    dec1.forEach(dec1bg => {
-        dec1bg.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
-        })
-    })
-
-    // dec 2
-    
-    dec2.forEach(dec2bg => {
-        dec2bg.addEventListener('mouseenter', () => {
-            gsap.to('.main', {
-                backgroundColor: '#6A5542',
-            })
-        })
-    })
-
-    dec2.forEach(dec2bg => {
-        dec2bg.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
-        })
-    })
-
-    // dec 3
-    
-    dec3.forEach(dec3bg => {
-        dec3bg.addEventListener('mouseenter', () => {
-            gsap.to('.main', {
-                backgroundColor: '#303030',
-            })
-        })
-    })
-
-    dec3.forEach(dec3bg => {
-        dec3bg.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
-        })
-    })
-}

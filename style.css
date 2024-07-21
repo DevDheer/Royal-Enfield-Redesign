@@ -54,7 +54,7 @@ body {
     height: 100vh;
     z-index: 100999;
     background-color: #101010;
-    display: flex;
+    display: none;
     align-items: flex-end;
     justify-content: flex-end;
     overflow: hidden;
@@ -639,7 +639,7 @@ li {
     z-index: 999;
 }
 
-.button {
+/* .button {
     position: relative;
     display: flex;
     align-items: center;
@@ -688,7 +688,7 @@ li {
 .button:active::after {
     left: 0;
     top: 0;
-}
+} */
 
 /* section 3 */
 
@@ -983,15 +983,19 @@ li {
 /* section 5 */
 
 .sec-5 {
+    position: relative;
     height: 70vw;
     width: 100vw;
+    gap: 1vw;
+    overflow: hidden;
+}
+.move-container{
+    position: relative;
+    top: 10vw;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 1vw;
 }
-
 .move-sec-5 {
     display: flex;
     align-items: center;
@@ -1024,29 +1028,29 @@ li {
 
 .one-move {
     position: relative;
-    top: -10vw;
     background-color: #6A5542;
-    transform: rotate(15deg);
+    transform: rotate(9deg);
 }
 
 .two-move {
     position: relative;
-    top: 10vw;
+    top: -10vw;
     background-color: #303030;
     transform: rotate(-20deg);
 }
 
 .three-move {
     position: relative;
-    top: 10vw;
+    top: 5vw;
     background-color: #002E21;
-    transform: rotate(10deg);
+    transform: rotate(9deg);
 }
 .four-move {
     position: relative;
+    top: -10vw;
     left: 30vw;
     background-color: #F1A501;
-    transform: rotate(25deg);
+    transform: rotate(-20deg);
 }
 .two-marquee {
     transform: translateX(-20%);
@@ -1054,6 +1058,95 @@ li {
 
 .three-marquee {
     transform: translateX(50%);
+}
+
+.goa-garage-cafe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -20%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sec-5-bgs-container{
+    position: relative;
+    display: flex;
+}
+
+.sec5-bgs{
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg1-sec5{
+    background-image: linear-gradient(180deg, rgba(2, 2, 2, 0), rgba(2, 2, 2, .6)), url(assets/cafe1.png);
+}
+.bg2-sec5{
+    background-image: linear-gradient(180deg, rgba(2, 2, 2, 0), rgba(2, 2, 2, .6)), url(assets/cafe2.png);
+}
+
+.sec-5-content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2vw;
+}
+
+.sec-5-content h1{
+    font-size: 4vw;
+    font-weight: 500;
+    line-height: 4vw;
+}
+
+.sec-5-content p{
+    font-family: 'balo';
+    font-size: 1vw;
+    width: 70%;
+    line-height: 1.3vw;
+}
+
+.button{
+    position: relative;
+    margin-top: 1vw;
+    background-color: #fff;
+    padding: .9vw 5vw;
+    border-radius: 1vw;
+    color: #000;
+    transition: color .4s ease;
+}
+.button::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #F1A501;
+    top: 0;
+    left: 0;
+    border-radius: 1vw;
+    transition: width .4s ease;
+}
+
+.button:hover::after{
+    width: 100%;
+}
+.button:hover{
+    color: #fff;
+}
+.button h3{
+    position: relative;
+    font-size: 1.2vw;
+    line-height: 1vw;
+    font-weight: 500;
+    z-index: 999;
 }
 
 /* section 6 */
