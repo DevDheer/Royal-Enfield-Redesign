@@ -261,7 +261,6 @@ function scrolltrigger() {
     var sec3tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".sec-3",
-            //  markers:true,
             start: "50% 50%",
             end: "150% 50%",
             scrub: 2,
@@ -346,9 +345,9 @@ function scrolltrigger() {
     gsap.from('.goa-garage-cafe', {
         scrollTrigger: {
             trigger: ".sec-5",
-            start: 'top 20%',
-            end: 'bottom 100%',
-            scrub: 1,
+            start: 'top 15%',
+            end: 'top 100%',
+            scrub: 5,
             pin: true,
         },
         rotate: 36,
@@ -357,10 +356,8 @@ function scrolltrigger() {
 
     gsap.to('.sec5-bgs', {
         scrollTrigger: {
-            trigger: ".sec-5-bgs-container",
-            start: 'top -10vw',
-            end: 'bottom 100vw',
-            scrub: 5,
+            trigger: ".sec-5",
+            scrub: 2,
             pin: true,
         },
         x: "-100%",
@@ -452,16 +449,26 @@ function cursorfollower() {
     let cursoreffect1 = document.querySelectorAll('.left-home h1, .right-home svg, img')
     let cursoreffect2 = document.querySelectorAll('a, button')
 
-    window.addEventListener('mousemove', (e) => {
+    document.querySelector('.main').addEventListener('mousemove', (e) => {
         gsap.to(cursorfollower, {
             x: e.clientX + 10,
             y: e.clientY + 10,
+            top: 0,
+            left: 0,
             duration: .5,
-            display: 'block',
+            opacity: 1,
             rotation: e.movementX * 0.9,
+            scale: 1,
         })
     })
 
+    document.querySelector('.main').addEventListener('mouseleave', () => {
+        gsap.to(cursorfollower, {
+            opacity: 0,
+            duration: .5,
+            scale:0,
+        });
+    })
     // cursoreffect1
 
     cursoreffect1.forEach(cursor1 => {
