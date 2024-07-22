@@ -47,7 +47,7 @@ function loader() {
         onComplete: homepage
     })
 }
-// loader()
+loader()
 
 function homepage() {
     const homepagetl = gsap.timeline()
@@ -80,7 +80,7 @@ function homepage() {
         delay: -.9
     })
 }
-// homepage()
+homepage()
 
 function navbar() {
     window.addEventListener('wheel', (dets) => {
@@ -154,6 +154,7 @@ function menutl() {
     })
 
     navmenutl.from('.circle-menu', {
+        display:'none',
         rotate: '-360deg',
         duration: 1,
         ease: Expo.easeInOut,
