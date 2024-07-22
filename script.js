@@ -47,7 +47,7 @@ function loader() {
         onComplete: homepage
     })
 }
-loader()
+// loader()
 
 function homepage() {
     const homepagetl = gsap.timeline()
@@ -80,7 +80,7 @@ function homepage() {
         delay: -.9
     })
 }
-homepage()
+// homepage()
 
 function navbar() {
     window.addEventListener('wheel', (dets) => {
@@ -133,7 +133,7 @@ function menutl() {
 
     navmenutl.to('.menu', {
         display: 'block',
-        width: '20vw',
+        width: '100vw',
         height: "20vh",
         top: '50%',
         bottom: 0,
@@ -145,32 +145,18 @@ function menutl() {
         width: '100vw',
         height: "100vh",
         duration: 1,
-        ease: 'elastic.out(1,0.4)',
     })
 
-    navmenutl.from('.header-menu h1, .menu hr', {
+    navmenutl.from('.menu-header', {
         y: 30,
         opacity: 0,
         stagger: 0.05,
     })
 
-    navmenutl.from('.links-menu a', {
-        y: 30,
-        opacity: 0,
-        duration: .5,
-        stagger: 0.05,
-    })
-    navmenutl.from('.video-menu', {
-        scale: 0,
-        opacity: 0,
-        duration: .5,
-    })
-    navmenutl.from('.social-menu a, .social-menu h1', {
-        y: 30,
-        opacity: 0,
-        duration: .5,
-        stagger: 0.05,
-        delay: -.5
+    navmenutl.from('.circle-menu', {
+        rotate: '-360deg',
+        duration: 1,
+        ease: Expo.easeInOut,
     })
 
 
@@ -187,6 +173,112 @@ function menutl() {
     close.addEventListener('click', () => {
         navmenutl.reverse();
     })
+
+
+    function menu(){
+        const menulink1 = document.querySelector('.menu-link-1')
+        const menulink2 = document.querySelector('.menu-link-2')
+        const menulink3 = document.querySelector('.menu-link-3')
+        const menulink4 = document.querySelector('.menu-link-4')
+        const menulink5 = document.querySelector('.menu-link-5')
+
+        menulink1.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '30deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-1', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-1', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink2.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '15deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-2', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-2', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink3.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '0deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-3', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-3', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink4.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '-15deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-4', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-4', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink5.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '-30deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-5', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-5', {
+                backgroundColor: '#fff'
+            })
+        })
+    }
+    menu()
 }
 menutl()
 
@@ -277,11 +369,11 @@ function scrolltrigger() {
         .to(".bottom-sec-3", {
             bottom: "-50vw",
         }, 'a')
-        .from("#top-h1", {
-            top: "20vw"
+        .to("#top-h1", {
+            top: "0rem"
         }, 'a')
-        .from("#bottom-h1", {
-            top: "-4vw"
+        .to("#bottom-h1", {
+            top: "0rem"
         }, 'a')
         .from(".center-sec-3", {
             delay: -0.2,

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Rushford clean';
+            color: #fff;
+        }
+
+        .menu {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #151515;
+        }
+
+        .circle-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 70vw;
+            height: 70vw;
+            top: 50%;
+            left: -20vw;
+            transform: translate(0%, -50%);
+            border-radius: 50%;
+            border: 1px solid #363636;
+        }
+
+        .menu-links-strips {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 4vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(0, -50%);
+            transform-origin: 0% 50%;
+        }
+
+        .strip-1 {
+            transform: translate(0, -50%) rotate(-30deg);
+        }
+
+        .strip-2 {
+            transform: translate(0, -50%) rotate(-15deg);
+        }
+
+        .strip-3 {
+            transform: translate(0, -50%) rotate(0deg);
+        }
+
+        .strip-4 {
+            transform: translate(0, -50%) rotate(15deg);
+        }
+
+        .strip-5 {
+            transform: translate(0, -50%) rotate(30deg);
+        }
+
+        .strip-first {
+            position: relative;
+            width: 55%;
+            height: 100%;
+        }
+
+        .strip-sec {
+            display: flex;
+            align-items: center;
+            gap: 2vw; 
+            padding-left: 2vw;
+            width: 50%;
+            height: 100%;
+        }
+
+        .image-menu {
+            position: absolute;
+            right: 0;
+        }
+
+        .image-menu img {
+            width: 100%;
+        }
+
+        .menu-header{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1vw 2vw;
+            z-index: 9;
+        }
+        .circle-link{
+            position: absolute;
+            width: .5vw;
+            height: .5vw;
+            right: .9%;
+            top: 30%;
+            border-radius: 50%;
+            background-color: #404040;
+        }
+        
+        .menu-link {
+            font-size: 4vw;
+            font-weight: 500;
+            line-height: 1vw;
+            color: #404040;
+            cursor: pointer;
+        }
+
+        .menu-link:hover{
+            font-style: italic;
+        }
+        
+        .menu-link-3{
+            color: #fff;
+        }
+        .circle-link-3{
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="menu">
+        <div class="menu-header">
+            <h1 class="menu-navigate">
+                <span class="hover-navigate">
+                    <span>m</span>
+                    <span>e</span>
+                    <span>n</span>
+                    <span>u</span>
+                </span>
+                <span class="hover-navigate2">
+                    <span>m</span>
+                    <span>e</span>
+                    <span>n</span>
+                    <span>u</span>
+                </span>
+            </h1>
+            <h1 class="menu-navigate">
+                <span class="hover-navigate">
+                    <span>C</span>
+                    <span>l</span>
+                    <span>o</span>
+                    <span>s</span>
+                    <span>e</span>
+                </span>
+                <span class="hover-navigate2">
+                    <span>C</span>
+                    <span>l</span>
+                    <span>o</span>
+                    <span>s</span>
+                    <span>e</span>
+                </span>
+            </h1>
+        </div>
+        <div class="circle-menu">
+            <div class="menu-links-strips strip-1">
+                <div class="strip-first">
+                    <div class="circle-link circle-link-1"></div>
+                </div>
+                <div class="strip-sec">
+                    <h1 class="menu-link menu-link-1">Shop</h1>
+                </div>
+                <!-- <div class="image-menu menu-img-1"><img src="assets/g1.png" alt=""></div> -->
+            </div>
+            <div class="menu-links-strips strip-2">
+                <div class="strip-first">
+                    <div class="circle-link circle-link-2"></div>
+                </div>
+                <div class="strip-sec">
+                    <h1 class="menu-link menu-link-2">Services</h1>
+                </div>
+                <!-- <div class="image-menu menu-img-2"><img src="assets/g3.png" alt=""></div> -->
+
+            </div>
+            <div class="menu-links-strips strip-3">
+                <div class="strip-first">
+                    <div class="circle-link circle-link-3"></div></div>
+
+                <div class="strip-sec">
+                    <h1 class="menu-link menu-link-3">Home</h1>
+                </div>
+                <!-- <div class="image-menu menu-img-2"><img src="assets/g6.png" alt=""></div> -->
+
+            </div>
+            <div class="menu-links-strips strip-4">
+                <div class="strip-first">
+                    <div class="circle-link circle-link-4"></div></div>
+
+                <div class="strip-sec">
+                    <h1 class="menu-link menu-link-4">Our World</h1>
+                </div>
+            </div>
+            <div class="menu-links-strips strip-5">
+                <div class="strip-first">
+                    <div class="circle-link circle-link-5"></div>
+                </div>
+                <div class="strip-sec">
+                    <h1 class="menu-link menu-link-5">Locate Us</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script>
+
+        function menu(){
+        const menulink1 = document.querySelector('.menu-link-1')
+        const menulink2 = document.querySelector('.menu-link-2')
+        const menulink3 = document.querySelector('.menu-link-3')
+        const menulink4 = document.querySelector('.menu-link-4')
+        const menulink5 = document.querySelector('.menu-link-5')
+
+        menulink1.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '30deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-1', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-1', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink2.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '15deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-2', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-2', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink3.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '0deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-3', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-3', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink4.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '-15deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-4', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-4', {
+                backgroundColor: '#fff'
+            })
+        })
+        menulink5.addEventListener('click', () => {
+            gsap.to('.circle-menu', {
+                rotate: '-30deg',
+                ease: 'elastic.out(1, 0.3)',
+                duration: 1.5
+            })
+            gsap.to('.menu-link', {
+                color: '#404040'
+            })
+            gsap.to('.menu-link-5', {
+                color: '#fff'
+            })
+            gsap.to('.circle-link', {
+                backgroundColor: '#404040'
+            })
+            gsap.to('.circle-link-5', {
+                backgroundColor: '#fff'
+            })
+        })
+    }
+    menu()
+    </script>
+</body>
+</html>
