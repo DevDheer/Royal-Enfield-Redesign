@@ -568,6 +568,7 @@ function cursorfollower() {
     let cursorfollower = document.querySelector('.cursor-follower')
     let cursoreffect1 = document.querySelectorAll('.left-home h1, .right-home svg, img')
     let cursoreffect2 = document.querySelectorAll('a, button')
+    let cursoreffect3 = document.querySelectorAll('.bike, #previous, #next, .menu-link')
 
     document.querySelector('.main').addEventListener('mousemove', (e) => {
         gsap.to(cursorfollower, {
@@ -631,6 +632,36 @@ function cursorfollower() {
             gsap.to(cursorfollower, {
                 rotate: '-360deg',
                 duration: 0.2,
+            });
+        });
+    });
+
+    // cursoreffect3
+
+    cursoreffect3.forEach(cursor3 => {
+        cursor3.addEventListener("mouseenter", () => {
+            gsap.to(cursorfollower, {
+                width: "3vw",
+                height: "3vw",
+                borderRadius: '50%',
+                mixBlendMode: 'normal',
+            });
+            gsap.to('.cursor-follower p', {
+                opacity: 1,
+            });
+        });
+    });
+
+    cursoreffect3.forEach(cursor3 => {
+        cursor3.addEventListener("mouseleave", () => {
+            gsap.to(cursorfollower, {
+                width: "2vw",
+                height: "2vw",
+                borderRadius: '0%',
+                mixBlendMode: 'difference',
+            });
+            gsap.to('.cursor-follower p', {
+                opacity: 0,
             });
         });
     });
