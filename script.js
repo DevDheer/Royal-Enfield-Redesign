@@ -47,7 +47,7 @@ function loader() {
         onComplete: homepage
     })
 }
-loader()
+// loader()
 
 function homepage() {
     const homepagetl = gsap.timeline()
@@ -80,7 +80,7 @@ function homepage() {
         delay: -.9
     })
 }
-homepage()
+// homepage()
 
 function navbar() {
     window.addEventListener('wheel', (dets) => {
@@ -286,7 +286,7 @@ menutl()
 function scrolltrigger() {
 
     // sec-1
-    gsap.from('.motorcycles', {
+    gsap.from('.bike', {
         scrollTrigger: {
             trigger: '.sec-1',
             start: 'top 50%',
@@ -300,7 +300,7 @@ function scrolltrigger() {
         ease: 'elastic.out(1,0.9',
     });
 
-    gsap.from('.move', {
+    gsap.from('.sec-1-header', {
         scrollTrigger: {
             trigger: '.sec-1',
             start: 'top 80%',
@@ -828,3 +828,56 @@ function gallery() {
 }
 gallery()
 
+function bikes(){
+
+    const bike = document.querySelectorAll('.bike')
+
+    // Add event listener to each bikescontainer
+    bike.forEach(bikescontainer => {
+        bikescontainer.addEventListener('click', () => {
+            gsap.to(bikescontainer, {
+                width: '50vw',
+                duration: .4
+            })
+            gsap.to(bikescontainer.querySelector('.inner-content'), {
+                display: 'block',
+                delay: -0.5
+            })
+
+            gsap.to(bikescontainer.querySelector('.outer-content'), {
+                rotate: 0
+            })
+        });
+    });
+
+
+    bike.forEach(bikescontainer => {
+        bikescontainer.addEventListener('mouseleave', () => {
+            gsap.to(bikescontainer, {
+                width: '17vw',
+                scale: 1,
+                duration: .4
+            })
+
+            gsap.to(bikescontainer.querySelector('.inner-content'), {
+                display: 'none',
+                delay: -0.5
+            })
+
+            gsap.to(bikescontainer.querySelector('.outer-content'), {
+                rotate: -90,
+            })
+        });
+    });
+
+    bike.forEach(bikescontainer => {
+        bikescontainer.addEventListener('mouseenter', () => {
+            gsap.to(bikescontainer, {
+                width: '17vw',
+                scale: 1.03,
+                duration: .4
+            })
+        });
+    });
+}
+bikes()

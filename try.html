@@ -34,7 +34,9 @@
             overflow: hidden;
         }
 
-        .sec-1-container {
+        .sec-1-bikescontainer {
+            width: 92vw;
+            overflow: hidden;
             position: relative;
             display: flex;
             align-items: center;
@@ -49,7 +51,7 @@
             background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/gt-bikes.png);
             background-position: center;
             background-size: cover;
-            transition: width .4s ease;
+            transition: transform .4s ease, border-radius .4s ease;
         }
 
         .content-bike {
@@ -68,12 +70,14 @@
             font-size: 1.5vw;
             font-weight: 500;
         }
-        .inner-content p{
+
+        .inner-content p {
             font-size: .9vw;
             line-height: 1vw;
             width: 80%;
         }
-        .outer-content{
+
+        .outer-content {
             position: relative;
             display: flex;
             align-items: center;
@@ -82,41 +86,46 @@
             transform: rotate(-90deg);
             transition: transform .4s ease;
         }
-        #bike-heading{
+
+        #bike-heading {
             font-size: 3vw;
             font-weight: 200;
             line-height: 4vw;
             transition: font-size .4s ease;
         }
 
-        .bike:hover{
-            /* position: absolute;
-            z-index: 999;
-            top: 0;
-            left: -10vw; */
-            width: 60vw;
+        .bike-two {
+            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/classic\ bikes.png);
         }
 
-        .bike:hover .inner-content{
-            display: block;
+        .bike-three {
+            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/bullet-bikes.png);
         }
 
-        .bike:hover .outer-content{
-            transform: rotate(0deg);
+        .bike-four {
+            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/hunter-bikes.png);
         }
-        .bike:hover #bike-heading{
-            font-size: 4vw;
+
+        .bike-five {
+            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/meteor-bikes.png);
         }
-        .bike-two{
-            background-image: url(assets/classic\ bikes.png);
+        .inner-bottom{
+            margin-top: 1vw;
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+        .inner-bottom h3{
+            font-size: 2vw;
+            color: #bbbbbb;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="sec-1">
-        <div class="sec-1-container">
+    <section class="sec-1">
+        <div class="sec-1-bikescontainer">
             <div class="bike bike-one">
                 <div class="content-bike">
                     <div class="outer-content">
@@ -126,6 +135,13 @@
                         <h3>Cafe Racer</h3>
                         <p>The updated Continental GT 650 takes its inspiration from the 1970s era of British
                             motorcycling, with its cast alloy wheels and blacked-out aesthetic.</p>
+                            <div class="inner-bottom">
+                            <h3>Price</h3>
+                            <h4>1,49,900</h4>
+                        </div>
+                        <span class="button">
+                            <h3>Test Ride</h3>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -135,55 +151,108 @@
                         <h1 id="bike-heading">Classic 350</h1>
                     </div>
                     <div class="inner-content">
-                        <h3>Cafe Racer</h3>
-                        <p>The updated Continental GT 650 takes its inspiration from the 1970s era of British
-                            motorcycling, with its cast alloy wheels and blacked-out aesthetic.</p>
+                        <h3>Timeless Classic</h3>
+                        <p>The All-New Classic 350 continues to embody the traditions and craftsmanship of the past as
+                            it is reborn.</p>
                     </div>
                 </div>
             </div>
             <div class="bike bike-three">
                 <div class="content-bike">
                     <div class="outer-content">
-                        <h1 id="bike-heading">Classic 350</h1>
+                        <h1 id="bike-heading">Bullet 350</h1>
                     </div>
                     <div class="inner-content">
-                        <h3>Cafe Racer</h3>
-                        <p>The updated Continental GT 650 takes its inspiration from the 1970s era of British
-                            motorcycling, with its cast alloy wheels and blacked-out aesthetic.</p>
+                        <h3>#BulletMeriJaan</h3>
+                        <p>Most motorcycles come and go, but a chosen few become icons. The Bullet 350 isn’t just a
+                            machine. It’s a legend with a legacy of over nine decades.</p>
                     </div>
                 </div>
             </div>
             <div class="bike bike-four">
                 <div class="content-bike">
                     <div class="outer-content">
-                        <h1 id="bike-heading">Classic 350</h1>
+                        <h1 id="bike-heading">Hunter 350</h1>
                     </div>
                     <div class="inner-content">
-                        <h3>Cafe Racer</h3>
-                        <p>The updated Continental GT 650 takes its inspiration from the 1970s era of British
-                            motorcycling, with its cast alloy wheels and blacked-out aesthetic.</p>
+                        <h3>Hunter who Hunts!!</h3>
+                        <p>The Hunter’s rider-first ergonomics, low centre of gravity have been
+                            designed to let you effortlessly manoeuvre the streets of the world’s coolest
+                            neighbourhoods.</p>
                     </div>
                 </div>
             </div>
             <div class="bike bike-five">
                 <div class="content-bike">
                     <div class="outer-content">
-                        <h1 id="bike-heading">Classic 350</h1>
+                        <h1 id="bike-heading">Meteor 350</h1>
                     </div>
                     <div class="inner-content">
-                        <h3>Cafe Racer</h3>
-                        <p>The updated Continental GT 650 takes its inspiration from the 1970s era of British
-                            motorcycling, with its cast alloy wheels and blacked-out aesthetic.</p>
+                        <h3>#CruiseEasy</h3>
+                        <p>Built on our ethos of long distance riding, the Meteor 350 represents the eternal spirit of
+                            the cruise.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script>
 
+        function bikes(){
 
+        const bike = document.querySelectorAll('.bike')
+
+        // Add event listener to each bikescontainer
+        bike.forEach(bikescontainer => {
+            bikescontainer.addEventListener('click', () => {
+                gsap.to(bikescontainer, {
+                    width: '50vw',
+                    duration: .4
+                })
+                gsap.to(bikescontainer.querySelector('.inner-content'), {
+                    display: 'block',
+                    delay: -0.5
+                })
+
+                gsap.to(bikescontainer.querySelector('.outer-content'), {
+                    rotate: 0
+                })
+            });
+        });
+
+
+        bike.forEach(bikescontainer => {
+            bikescontainer.addEventListener('mouseleave', () => {
+                gsap.to(bikescontainer, {
+                    width: '17vw',
+                    scale: 1,
+                    duration: .4
+                })
+
+                gsap.to(bikescontainer.querySelector('.inner-content'), {
+                    display: 'none',
+                    delay: -0.5
+                })
+
+                gsap.to(bikescontainer.querySelector('.outer-content'), {
+                    rotate: -90,
+                })
+            });
+        });
+
+        bike.forEach(bikescontainer => {
+            bikescontainer.addEventListener('mouseenter', () => {
+                gsap.to(bikescontainer, {
+                    width: '17vw',
+                    scale: 1.03,
+                    duration: .4
+                })
+            });
+        });
+    }
+    bikes()
     </script>
 </body>
 
