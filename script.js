@@ -158,6 +158,18 @@ function menutl() {
         rotate: '-360deg',
         duration: 1,
         ease: Expo.easeInOut,
+    },'a')
+
+    navmenutl.from('.bg-img-menu', {
+        y: '100%',
+        opacity: 0,
+        duration: 1,
+        ease: Expo.easeInOut,
+    },'a')
+
+    navmenutl.from('.img-menu', {
+        y: -100,
+        opacity: 0,
     })
 
 
@@ -201,6 +213,12 @@ function menutl() {
             gsap.to('.circle-link-1', {
                 backgroundColor: '#fff'
             })
+            gsap.to('.img-menu', {
+                opacity: 0,
+            })
+            gsap.to('.img-1', {
+                opacity: 1,
+            })
         })
         menulink2.addEventListener('click', () => {
             gsap.to('.circle-menu', {
@@ -219,6 +237,12 @@ function menutl() {
             })
             gsap.to('.circle-link-2', {
                 backgroundColor: '#fff'
+            })
+            gsap.to('.img-menu', {
+                opacity: 0,
+            })
+            gsap.to('.img-2', {
+                opacity: 1,
             })
         })
         menulink3.addEventListener('click', () => {
@@ -239,6 +263,12 @@ function menutl() {
             gsap.to('.circle-link-3', {
                 backgroundColor: '#fff'
             })
+            gsap.to('.img-menu', {
+                opacity: 0,
+            })
+            gsap.to('.img-3', {
+                opacity: 1,
+            })
         })
         menulink4.addEventListener('click', () => {
             gsap.to('.circle-menu', {
@@ -258,6 +288,12 @@ function menutl() {
             gsap.to('.circle-link-4', {
                 backgroundColor: '#fff'
             })
+            gsap.to('.img-menu', {
+                opacity: 0,
+            })
+            gsap.to('.img-4', {
+                opacity: 1,
+            })
         })
         menulink5.addEventListener('click', () => {
             gsap.to('.circle-menu', {
@@ -276,6 +312,12 @@ function menutl() {
             })
             gsap.to('.circle-link-5', {
                 backgroundColor: '#fff'
+            })
+            gsap.to('.img-menu', {
+                opacity: 0,
+            })
+            gsap.to('.img-5', {
+                opacity: 1,
             })
         })
     }
