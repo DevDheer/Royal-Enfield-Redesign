@@ -513,9 +513,8 @@ li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
-    background-color: #101010;
     overflow: hidden;
 }   
 .sec-1-header{
@@ -564,8 +563,7 @@ li {
 .bike {
     position: relative;
     width: 17vw;
-    height: 85vh;
-    background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/gt-bikes.png);
+    height: 95vh;
     background-position: center;
     background-size: cover;
     transition: transform .4s ease, border-radius .4s ease;
@@ -610,7 +608,9 @@ li {
     line-height: 4vw;
     transition: font-size .4s ease;
 }
-
+.bike-one {
+    background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/gt-bikes.png);
+}
 .bike-two {
     background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/classic\ bikes.png);
 }

@@ -327,20 +327,6 @@ menutl()
 
 function scrolltrigger() {
 
-    // sec-1
-    gsap.from('.bike', {
-        scrollTrigger: {
-            trigger: '.sec-1',
-            start: 'top 50%',
-            end: 'bottom bottom',
-            scrub: 3,
-        },
-        y: 100,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: 'elastic.out(1,0.9',
-    });
 
     gsap.from('.sec-1-header', {
         scrollTrigger: {
