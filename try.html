@@ -1,259 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            font-family: 'Rushford clean';
-            color: #fff;
-        }
-
-        p {
-            font-family: 'baloo 2';
-        }
-
-        .sec-1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: 100vw;
-            background-color: #101010;
-            overflow: hidden;
-        }
-
-        .sec-1-bikescontainer {
-            width: 92vw;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2vw;
-        }
-
-        .bike {
-            position: relative;
-            width: 17vw;
-            height: 85vh;
-            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/gt-bikes.png);
-            background-position: center;
-            background-size: cover;
-            transition: transform .4s ease, border-radius .4s ease;
-        }
-
-        .content-bike {
-            padding: 2vw;
-        }
-
-        .inner-content {
-            position: absolute;
-            bottom: 10%;
-            display: none;
-            color: #dadada;
-            transition: display .4s ease;
-        }
-
-        .inner-content h3 {
-            font-size: 1.5vw;
-            font-weight: 500;
-        }
-
-        .inner-content p {
-            font-size: .9vw;
-            line-height: 1vw;
-            width: 80%;
-        }
-
-        .outer-content {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 85vh;
-            transform: rotate(-90deg);
-            transition: transform .4s ease;
-        }
-
-        #bike-heading {
-            font-size: 3vw;
-            font-weight: 200;
-            line-height: 4vw;
-            transition: font-size .4s ease;
-        }
-
-        .bike-two {
-            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/classic\ bikes.png);
-        }
-
-        .bike-three {
-            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/bullet-bikes.png);
-        }
-
-        .bike-four {
-            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/hunter-bikes.png);
-        }
-
-        .bike-five {
-            background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/meteor-bikes.png);
-        }
-        .inner-bottom{
-            margin-top: 1vw;
-            display: flex;
-            align-items: center;
-            gap: 1vw;
-        }
-        .inner-bottom h3{
-            font-size: 2vw;
-            color: #bbbbbb;
-        }
-    </style>
-</head>
-
-<body>
-
-    <section class="sec-1">
-        <div class="sec-1-bikescontainer">
-            <div class="bike bike-one">
-                <div class="content-bike">
-                    <div class="outer-content">
-                        <h1 id="bike-heading">GT 650</h1>
-                    </div>
-                    <div class="inner-content">
-                        <h3>Cafe Racer</h3>
-                        <p>The updated Continental GT 650 takes its inspiration from the 1970s era of British
-                            motorcycling, with its cast alloy wheels and blacked-out aesthetic.</p>
-                            <div class="inner-bottom">
-                            <h3>Price</h3>
-                            <h4>1,49,900</h4>
-                        </div>
-                        <span class="button">
-                            <h3>Test Ride</h3>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="bike bike-two">
-                <div class="content-bike">
-                    <div class="outer-content">
-                        <h1 id="bike-heading">Classic 350</h1>
-                    </div>
-                    <div class="inner-content">
-                        <h3>Timeless Classic</h3>
-                        <p>The All-New Classic 350 continues to embody the traditions and craftsmanship of the past as
-                            it is reborn.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bike bike-three">
-                <div class="content-bike">
-                    <div class="outer-content">
-                        <h1 id="bike-heading">Bullet 350</h1>
-                    </div>
-                    <div class="inner-content">
-                        <h3>#BulletMeriJaan</h3>
-                        <p>Most motorcycles come and go, but a chosen few become icons. The Bullet 350 isn’t just a
-                            machine. It’s a legend with a legacy of over nine decades.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bike bike-four">
-                <div class="content-bike">
-                    <div class="outer-content">
-                        <h1 id="bike-heading">Hunter 350</h1>
-                    </div>
-                    <div class="inner-content">
-                        <h3>Hunter who Hunts!!</h3>
-                        <p>The Hunter’s rider-first ergonomics, low centre of gravity have been
-                            designed to let you effortlessly manoeuvre the streets of the world’s coolest
-                            neighbourhoods.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bike bike-five">
-                <div class="content-bike">
-                    <div class="outer-content">
-                        <h1 id="bike-heading">Meteor 350</h1>
-                    </div>
-                    <div class="inner-content">
-                        <h3>#CruiseEasy</h3>
-                        <p>Built on our ethos of long distance riding, the Meteor 350 represents the eternal spirit of
-                            the cruise.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script>
-
-        function bikes(){
-
-        const bike = document.querySelectorAll('.bike')
-
-        // Add event listener to each bikescontainer
-        bike.forEach(bikescontainer => {
-            bikescontainer.addEventListener('click', () => {
-                gsap.to(bikescontainer, {
-                    width: '50vw',
-                    duration: .4
-                })
-                gsap.to(bikescontainer.querySelector('.inner-content'), {
-                    display: 'block',
-                    delay: -0.5
-                })
-
-                gsap.to(bikescontainer.querySelector('.outer-content'), {
-                    rotate: 0
-                })
-            });
-        });
-
-
-        bike.forEach(bikescontainer => {
-            bikescontainer.addEventListener('mouseleave', () => {
-                gsap.to(bikescontainer, {
-                    width: '17vw',
-                    scale: 1,
-                    duration: .4
-                })
-
-                gsap.to(bikescontainer.querySelector('.inner-content'), {
-                    display: 'none',
-                    delay: -0.5
-                })
-
-                gsap.to(bikescontainer.querySelector('.outer-content'), {
-                    rotate: -90,
-                })
-            });
-        });
-
-        bike.forEach(bikescontainer => {
-            bikescontainer.addEventListener('mouseenter', () => {
-                gsap.to(bikescontainer, {
-                    width: '17vw',
-                    scale: 1.03,
-                    duration: .4
-                })
-            });
-        });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Click Effect with Media Queries</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #333;
     }
-    bikes()
-    </script>
-</body>
 
+    @media (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 1200px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    @media (min-width: 1201px) {
+      body {
+        background-color: lightcoral;
+      }
+    }
+
+    #effect-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .effect {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: scale(0) rotate(0deg);
+      animation: clickEffect 1s ease-out, colorChange 1s linear;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      transform: translate(-50%, -50%);
+      animation: particleEffect 1s ease-out;
+    }
+
+    @keyframes clickEffect {
+      to {
+        transform: scale(4) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes colorChange {
+      0% { background: rgba(255, 0, 0, 0.5); }
+      25% { background: rgba(0, 255, 0, 0.5); }
+      50% { background: rgba(0, 0, 255, 0.5); }
+      75% { background: rgba(255, 255, 0, 0.5); }
+      100% { background: rgba(255, 0, 255, 0.5); }
+    }
+
+    @keyframes particleEffect {
+      to {
+        transform: translate(-50%, -50%) translate(100px, 0px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="effect-container"></div>
+  <script>
+    document.addEventListener('click', function (e) {
+      const effectContainer = document.getElementById('effect-container');
+
+      // Create main effect
+      for (let i = 0; i < 5; i++) {
+        const effect = document.createElement('div');
+        effect.className = 'effect';
+        effect.style.left = `${e.pageX - 10}px`;
+        effect.style.top = `${e.pageY - 10}px`;
+        effect.style.animationDelay = `${i * 0.1}s`;
+        effectContainer.appendChild(effect);
+
+        setTimeout(() => {
+          effect.remove();
+        }, 1000); // Duration must match the CSS animation duration
+      }
+
+      // Create particles
+      for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = `${e.pageX}px`;
+        particle.style.top = `${e.pageY}px`;
+        const angle = Math.random() * 2 * Math.PI;
+        const radius = Math.random() * 100;
+        particle.style.transform = `translate(-50%, -50%) translate(${radius * Math.cos(angle)}px, ${radius * Math.sin(angle)}px)`;
+        effectContainer.appendChild(particle);
+
+        setTimeout(() => {
+          particle.remove();
+        }, 1000); // Duration must match the CSS animation duration
+      }
+    });
+  </script>
+</body>
 </html>

@@ -3,7 +3,7 @@ function scrolltotop() {
     Scroll.scrollTo(0, 0)
 }
 
-// Scroll.scrollTo(0, 0)
+Scroll.scrollTo(0, 0)
 
 function loader() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -331,15 +331,14 @@ function scrolltrigger() {
     gsap.from('.sec-1-header', {
         scrollTrigger: {
             trigger: '.sec-1',
-            start: 'top 80%',
-            end: 'bottom bottom',
+            start: 'top 90%',
+            end: 'top 100%',
             scrub: 2,
         },
         y: 100,
         opacity: 0,
         stagger: 0.1,
         duration: 0.8,
-        ease: 'elastic.out(1,0.9',
     });
 
     // sec-2
@@ -940,3 +939,19 @@ function bikes(){
     });
 }
 bikes()
+
+function cursorclicking() { 
+    document.addEventListener('click', function (e) {
+    const effectContainer = document.getElementById('cursor-effect-container');
+    const effect = document.createElement('div');
+    effect.className = 'click-effect';
+    effect.style.left = `${e.pageX - 10}px`;
+    effect.style.top = `${e.pageY - 10}px`;
+    effectContainer.appendChild(effect);
+
+    setTimeout(() => {
+      effect.remove();
+    }, 600);
+  });
+}
+cursorclicking(1)

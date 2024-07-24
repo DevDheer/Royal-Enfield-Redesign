@@ -47,6 +47,34 @@ body {
     overflow: hidden;
 }
 
+#cursor-effect-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999999;
+}
+
+.click-effect {
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    z-index: 999999;
+    border-radius: 50%;
+    background: #B80B0C;
+    transform: scale(0);
+    animation: clickEffect 0.6s ease;
+}
+
+@keyframes clickEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
 /* loader */
 .loader {
     position: fixed;
@@ -66,6 +94,7 @@ body {
     line-height: 2vw;
     font-weight: 500;
 }
+
 .logo-loader {
     position: absolute;
     top: 50%;
@@ -117,13 +146,15 @@ body {
     color: #000;
     mix-blend-mode: difference;
 }
-.cursor-follower p{
+
+.cursor-follower p {
     opacity: 0;
     position: relative;
     top: 5%;
     font-size: 1vw;
     font-weight: normal;
 }
+
 a {
     text-decoration: none;
     color: #fff;
@@ -179,7 +210,7 @@ li {
 }
 
 .logo img {
-    width: 70%;
+    width: 15vw;
 }
 
 .menu-navigation-container {
@@ -207,7 +238,7 @@ li {
 }
 
 .menu-navigate:hover .hover-navigate span {
-    transform: translateY(-2.5vw);
+    transform: translateY(-6vw);
 }
 
 .menu-navigate .hover-navigate span:nth-child(1) {
@@ -238,7 +269,7 @@ li {
 }
 
 .menu-navigate .hover-navigate2 span {
-    transform: translateY(2.5vw);
+    transform: translateY(6vw);
 }
 
 .menu-navigate:hover .hover-navigate2 span {
@@ -288,15 +319,7 @@ li {
     height: 0%;
     overflow: hidden;
 }
-/* .bg-img-menu{
-    position: absolute;
-    top: 0;
-    right: -60%;
-}
-.bg-img-menu img{
-    width: 40%;
-    opacity: 0.6;
-} */
+
 .circle-menu {
     display: flex;
     align-items: center;
@@ -351,7 +374,7 @@ li {
 .strip-sec {
     display: flex;
     align-items: center;
-    gap: 2vw; 
+    gap: 2vw;
     padding-left: 2vw;
     width: 50%;
     height: 100%;
@@ -366,14 +389,15 @@ li {
     width: 100%;
 }
 
-.menu-header{
+.menu-header {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 9;
 }
-.circle-link{
+
+.circle-link {
     position: absolute;
     width: .5vw;
     height: .5vw;
@@ -391,36 +415,38 @@ li {
     cursor: pointer;
 }
 
-.menu-link:hover{
+.menu-link:hover {
     font-style: italic;
 }
 
-.menu-link-3{
+.menu-link-3 {
     color: #fff;
 }
-.circle-link-3{
+
+.circle-link-3 {
     background-color: #fff;
 }
 
-.imgs-swipe-menu{
+.imgs-swipe-menu {
     position: absolute;
     top: 15%;
-    left: 10%;    
+    left: 10%;
 }
-.img-menu{
+
+.img-menu {
     opacity: 0;
     position: absolute;
-    background-color: red;  
     width: 40vw;
     height: 100%;
     transform-origin: center;
 }
-.img-menu img{
+
+.img-menu img {
     border-radius: 50%;
     width: 80%;
 }
 
-.img-5{
+.img-5 {
     opacity: 1;
 }
 
@@ -478,6 +504,8 @@ li {
 }
 
 #rotating-text {
+    width: 15vw;
+    height: 15vw;
     animation: rotate 5s linear infinite;
     transform-origin: center;
 }
@@ -527,11 +555,12 @@ li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 110vh;
+    height: 65vw;
     width: 100vw;
     overflow: hidden;
-}   
-.sec-1-header{
+}
+
+.sec-1-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -543,31 +572,26 @@ li {
     margin-bottom: 1vw;
 }
 
-.sec-1-header h1{
+.sec-1-header h1 {
     font-size: 2vw;
     font-weight: 500;
     line-height: 2vw;
 }
 
-.sec-1-header p{
+.sec-1-header p {
     font-size: .9vw;
     text-align: right;
     line-height: 1vw;
 }
 
-.sec-1 p{
+.sec-1 p {
     font-family: 'balo';
 }
 
-.sec-1 .button{
-    width: 100vw;
-    padding: 1vw 1vw;
-}
 
 .sec-1-bikescontainer {
     width: 92vw;
     overflow: hidden;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -576,8 +600,7 @@ li {
 
 .bike {
     position: relative;
-    width: 17vw;
-    height: 95vh;
+    height: 50vw;
     background-position: center;
     background-size: cover;
     transition: transform .4s ease, border-radius .4s ease;
@@ -611,7 +634,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 50vw;
     transform: rotate(-90deg);
     transition: transform .4s ease;
 }
@@ -622,9 +645,11 @@ li {
     line-height: 4vw;
     transition: font-size .4s ease;
 }
+
 .bike-one {
     background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/gt-bikes.png);
 }
+
 .bike-two {
     background-image: linear-gradient(rgba(2, 2, 2, 0.4), rgba(2, 2, 2, 0.4)), url(assets/classic\ bikes.png);
 }
@@ -646,7 +671,7 @@ li {
 /* section 2 */
 .sec-2 {
     width: 100%;
-    height: 120vh;
+    height: 55vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -979,7 +1004,7 @@ li {
     top: 5vw;
 }
 
-.accessory-circle-bg{
+.accessory-circle-bg {
     position: absolute;
     width: 20vw;
     height: 20vw;
@@ -991,7 +1016,7 @@ li {
     transition: scale .5s ease;
 }
 
-.accessory:hover .accessory-circle-bg{
+.accessory:hover .accessory-circle-bg {
     scale: 1.3;
 }
 
@@ -1393,4 +1418,146 @@ li {
     top: 8vw;
     font-family: 'balo';
     font-size: 1vw;
+}
+
+
+
+
+
+
+
+@media (max-width: 990px) {
+    .inner-content h3 {
+        font-size: 2.5vw;
+        font-weight: 500;
+    }
+    
+    .inner-content p {
+        font-size: 1.2vw;
+        line-height: 1.3vw;
+        width: 80%;
+    }
+
+    .sec-1-bikescontainer {
+        gap: 1vw;
+    }
+
+    .bike{
+        width: 20vw;
+    }
+}
+
+@media (max-width: 901px) {
+    .logo img {
+        width: 17vw;
+    }
+
+    .menu-navigate {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 851px) {
+    .home-container h1 {
+        font-size: 10vw;
+        line-height: 9vw;
+        height: 20vw;
+    }
+
+    #rotating-text {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    #arrow-home {
+        font-size: 3vw;
+    }
+
+    .menu-navigate {
+        font-size: 2.5vw;
+    }
+
+    .bg-home {
+        width: 100%;
+        height: 90vh;
+    }
+
+    .home-container {
+        height: 80vh;
+    }
+    .home{
+        height: 100vh;
+    }
+
+    .bg-home video {
+        top: 5%;
+    }
+
+    .navbar{
+        padding: 0 3vw;
+        height: 8vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .cursor-follower {
+        display: none;
+    }
+}
+
+@media (max-width: 651px) {
+    .logo-loader h1 {
+        font-size: 10vw;
+    }
+
+    #loader-text {
+        font-size: 13vw;
+        line-height: 5vw;
+    }
+}
+@media (max-width: 511px) {
+    .home-container h1 {
+        font-size: 13vw;
+        line-height: 12vw;
+        height: 22vw;
+    }
+
+    .menu-navigate {
+        font-size: 3vw;
+    }
+
+    .logo img{
+        width: 24vw;
+    }
+
+    .bg-home video {
+        top: 2%;
+    }
+}
+@media (max-width: 451px) {
+    #loader-text {
+        font-size: 14vw;
+        line-height: 5vw;
+    }
+
+    .menu-navigate {
+        font-size: 4vw;
+    }
+
+    .logo img{
+        width: 30vw;
+    }
+
+    #rotating-text {
+        position: relative;
+        top: 5vw;
+        width: 25vw;
+        height: 25vw;
+    }
+
+    #arrow-home {
+        font-size: 3.5vw;
+        top: 70%;
+        transform: translate(-50%, 70%);
+    }
 }
