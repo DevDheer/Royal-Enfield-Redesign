@@ -82,7 +82,7 @@ body {
     height: 100vh;
     z-index: 100999;
     background-color: #101010;
-    display: flex;
+    display: none;
     align-items: flex-end;
     justify-content: flex-end;
     overflow: hidden;
@@ -238,7 +238,7 @@ li {
 }
 
 .menu-navigate:hover .hover-navigate span {
-    transform: translateY(-6vw);
+    transform: translateY(-7vw);
 }
 
 .menu-navigate .hover-navigate span:nth-child(1) {
@@ -269,7 +269,7 @@ li {
 }
 
 .menu-navigate .hover-navigate2 span {
-    transform: translateY(6vw);
+    transform: translateY(7vw);
 }
 
 .menu-navigate:hover .hover-navigate2 span {
@@ -318,6 +318,10 @@ li {
     transform: translate(-50%, -50%);
     height: 0%;
     overflow: hidden;
+}
+
+.menu-responsive {
+    display: none;
 }
 
 .circle-menu {
@@ -429,8 +433,8 @@ li {
 
 .imgs-swipe-menu {
     position: absolute;
-    top: 15%;
-    left: 10%;
+    top: 10vw;
+    left: 10vw;
 }
 
 .img-menu {
@@ -1424,14 +1428,82 @@ li {
 
 
 
+@media (max-width: 1400px) {
+    .imgs-swipe-menu {
+        top: 7rem;
+        left: 5rem;
+    }
 
+    .img-menu {
+        width: 40rem;
+    }
+}
+
+@media (max-width: 1277px) {
+    .imgs-swipe-menu {
+        top: 8rem;
+        left: 5rem;
+    }
+
+    .img-menu {
+        width: 35rem;
+    }
+}
+
+@media (max-width: 1120px) {
+    .imgs-swipe-menu {
+        top: 14vw;
+        left: 10vw;
+    }
+
+    .img-menu {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 999px) {
+    .imgs-swipe-menu {
+        top: 16vw;
+        left: 7vw;
+    }
+
+    .img-menu {
+        width: 45vw;
+    }
+
+    .circle-menu {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+@media (max-width: 810px) {
+    .imgs-swipe-menu {
+        display: none;
+    }
+
+    .circle-menu {
+        left: -30vw;
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .circle-menu {
+        left: -40vw;
+        width: 100vw;
+        height: 100vw;
+    }
+}
 
 @media (max-width: 990px) {
     .inner-content h3 {
         font-size: 2.5vw;
         font-weight: 500;
     }
-    
+
     .inner-content p {
         font-size: 1.2vw;
         line-height: 1.3vw;
@@ -1442,7 +1514,7 @@ li {
         gap: 1vw;
     }
 
-    .bike{
+    .bike {
         width: 20vw;
     }
 }
@@ -1490,7 +1562,7 @@ li {
         top: 5%;
     }
 
-    .navbar{
+    .navbar {
         padding: 0 3vw;
         height: 8vh;
     }
@@ -1500,8 +1572,34 @@ li {
     .cursor-follower {
         display: none;
     }
-}
+    .menu-links-strips{
+        display: none;
+    }
+    .circle-menu{
+        border: 0px;
+    }
+    .menu-responsive {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+    }
 
+    .menu-resposnive-links {
+        text-align: center;
+        font-size: 8vw;
+    }
+
+    .menu-resposnive-links a {
+        color: #404040;
+    }
+
+    .menu-resposnive-links a:hover {
+        color: #fff;
+        font-style: italic;
+    }
+}
 @media (max-width: 651px) {
     .logo-loader h1 {
         font-size: 10vw;
@@ -1511,7 +1609,9 @@ li {
         font-size: 13vw;
         line-height: 5vw;
     }
+
 }
+
 @media (max-width: 511px) {
     .home-container h1 {
         font-size: 13vw;
@@ -1520,17 +1620,22 @@ li {
     }
 
     .menu-navigate {
-        font-size: 3vw;
+        font-size: 4.5vw;
     }
 
-    .logo img{
+    .logo img {
         width: 24vw;
     }
 
     .bg-home video {
         top: 2%;
     }
+
+    .menu-resposnive-links {
+        font-size: 10vw;
+    }
 }
+
 @media (max-width: 451px) {
     #loader-text {
         font-size: 14vw;
@@ -1538,10 +1643,10 @@ li {
     }
 
     .menu-navigate {
-        font-size: 4vw;
+        font-size: 7vw;
     }
 
-    .logo img{
+    .logo img {
         width: 30vw;
     }
 
@@ -1559,25 +1664,23 @@ li {
     }
 
     .menu-navigate {
-        font-size: 2.5vw;
+        font-size: 5vw;
     }
 
     .bg-home {
         width: 100%;
-        height: 90vh;
+        height: 55vh;
     }
 
     .home-container {
-        height: 80vh;
+        height: 50vh;
     }
 
     .bg-home video {
-        top: 5%;
+        top: 7%;
     }
 
-    .navbar{
-        padding: 1vw 3vw;
-        height: 4vh;
-        background-color: red;
+    .menu-resposnive-links {
+        font-size: 12vw;
     }
 }

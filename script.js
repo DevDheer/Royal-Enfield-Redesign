@@ -3,7 +3,7 @@ function scrolltotop() {
     Scroll.scrollTo(0, 0)
 }
 
-Scroll.scrollTo(0, 0)
+// Scroll.scrollTo(0, 0)
 
 function loader() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -157,6 +157,14 @@ function menutl() {
         display:'none',
         rotate: '-360deg',
         duration: 1,
+        ease: Expo.easeInOut,
+    },'a')
+
+    navmenutl.from('.menu-resposnive-links li', {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.05,
         ease: Expo.easeInOut,
     },'a')
 
