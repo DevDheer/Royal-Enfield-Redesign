@@ -1485,9 +1485,6 @@ li {
     .home-container {
         height: 80vh;
     }
-    .home{
-        height: 100vh;
-    }
 
     .bg-home video {
         top: 5%;
@@ -1559,5 +1556,28 @@ li {
         font-size: 3.5vw;
         top: 70%;
         transform: translate(-50%, 70%);
+    }
+
+    .menu-navigate {
+        font-size: 2.5vw;
+    }
+
+    .bg-home {
+        width: 100%;
+        height: 90vh;
+    }
+
+    .home-container {
+        height: 80vh;
+    }
+
+    .bg-home video {
+        top: 5%;
+    }
+
+    .navbar{
+        padding: 1vw 3vw;
+        height: 4vh;
+        background-color: red;
     }
 }
