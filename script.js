@@ -11,13 +11,13 @@ function loader() {
         let percentage = 0;
 
         let interval = setInterval(function () {
-            percentage++;
-            loader.textContent = percentage + '%';
+            percentage += 2;
+            loader.textContent = percentage;
 
             if (percentage >= 100) {
                 clearInterval(interval);
             }
-        }, 25);
+        }, 45);
     });
     let loadertl = gsap.timeline()
     loadertl.from('.logo-loader h1 span', {
