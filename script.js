@@ -484,6 +484,30 @@ function scrolltrigger() {
         x: "-100%",
     })
 
+    // services
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".service",
+            start: "center center",
+            end: "bottom top",
+            scrub: 1,
+            pin: true
+        }
+    })
+        .from(".service-img", {
+            x: innerWidth * 1,
+            rotate: 90
+        })
+        .from(".service-line1", {
+            x: innerWidth * 1
+        })
+        .from(".service-line2", {
+            x: innerWidth * -1
+        })
+        .from(".service .button", {
+            x: innerWidth * -1
+        })
 
     // sec-6
     gsap.from('.header-sec-6', {
@@ -903,3 +927,6 @@ function cursorclicking() {
     });
 }
 cursorclicking()
+
+
+

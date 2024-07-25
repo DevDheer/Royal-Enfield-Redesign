@@ -1,46 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Function Disable</title>
     <style>
-        /* Example CSS for responsiveness */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
+        body {
+            font-family: 'poppins', sans-serif;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .test-ride {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            padding: 5vw;
+        }
+
+        .test-ride h2 {
+            font-family: 'Rushford Clean';
+            font-size: 5vw;
+            line-height: 5vw;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .test-img {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(https://www.royalenfield.com/content/dam/royal-enfield/india/home/locate-us/desktop/service-centres.jpg);
+            background-position: center;
+            background-size: cover;
+            z-index: -9;
+        }
+
+        .button {
+    position: relative;
+    margin-top: 1vw;
+    background-color: #fff;
+    padding: .9vw 5vw;
+    border-radius: 1vw;
+    color: #000;
+    transition: color .4s ease;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #F1A501;
+    top: 0;
+    left: 0;
+    border-radius: 1vw;
+    transition: width .4s ease;
+}
+
+.button:hover::after {
+    width: 100%;
+}
+
+.button:hover {
+    color: #fff;
+}
+
+.button h3 {
+    position: relative;
+    font-size: 1.2vw;
+    line-height: 1vw;
+    font-weight: 500;
+    z-index: 999;
+}
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <button id="myButton">Click me</button>
+    <div class="test-ride">
+        <h2 class="test-ride-line1">For Everything That Your</h2>
+        <h2 class="test-ride-line2">Motorcycles May Need</h2>
+        <span class="button"><h3>Book Service Now</h3></span>
+        <div class="test-img"></div>
     </div>
 
+    <!-- GSAP JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <!-- ScrollTrigger JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
     <script>
-        // Function to be disabled on small screens
-        function myFunction() {
-            alert('Function executed!');
-        }
-
-        // Function to check screen size and disable function
-        function checkScreenSize() {
-            const screenWidth = window.innerWidth;
-            const button = document.getElementById('myButton');
-
-            if (screenWidth < 600) { // Example threshold
-                button.removeEventListener('click', myFunction);
-                button.disabled = true;
-            } else {
-                button.addEventListener('click', myFunction);
-                button.disabled = false;
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".test-ride",
+                start: "center center",
+                end: "bottom top",
+                scrub: 1,
+                pin: true
             }
-        }
+        })
 
-        // Check screen size on load and on resize
-        window.addEventListener('load', checkScreenSize);
-        window.addEventListener('resize', checkScreenSize);
+
+            .from(".test-img", {
+                x: innerWidth * 1,
+                rotate: 50
+            })
+            .from(".test-ride-line1", {
+                x: innerWidth * 1
+            })
+            .from(".test-ride-line2", {
+                x: innerWidth * -1
+            })
+            .from(".test-ride .button", {
+                x: innerWidth * -1
+            })
+
+
     </script>
 </body>
+
 </html>
