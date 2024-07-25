@@ -379,55 +379,16 @@ function scrolltrigger() {
         stagger: 0.05,
     })
     // sec-3
-
-    var sec3tl = gsap.timeline({
+    gsap.to('#heading-sec-3', {
         scrollTrigger: {
-            trigger: ".sec-3",
-            start: "50% 50%",
-            end: "150% 50%",
-            scrub: 2,
+            trigger: '.header-sec-3',
+            start: 'top top',
+            end: 'top bottom',
+            scrub: 3,
             pin: true
-        }
-    });
-    sec3tl
-        .to(".center-sec-3", {
-            height: "100vh",
-        }, 'a')
-        .to(".top-sec-3", {
-            top: "-50vw",
-        }, 'a')
-        .to(".bottom-sec-3", {
-            bottom: "-50vw",
-        }, 'a')
-        .to("#top-h1", {
-            top: "0rem"
-        }, 'a')
-        .to("#bottom-h1", {
-            top: "0rem"
-        }, 'a')
-        .from(".center-sec-3", {
-            delay: -0.2,
-            opacity: 0,
-            y: "100%"
-        })
-        .from(".text-sec-3", {
-            delay: -0.2,
-            opacity: 0,
-            y: "100%"
-        })
-        .from("#arrival-1", {
-            delay: -0.2,
-            stagger: 0.2,
-            x: "-100%",
-            opacity: 0
-        })
-
-        .from("#arrival-2, #arrival-3", {
-            delay: -0.4,
-            stagger: 0.2,
-            x: "100%",
-            opacity: 0
-        })
+        },
+        scale: 2,
+    })
 
 
     // sec-4
@@ -928,5 +889,46 @@ function cursorclicking() {
 }
 cursorclicking()
 
+function rides() {
+
+    const details = gsap.utils.toArray(".desktop-content-section-sec-3:not(:first-child)")
+    const photos = gsap.utils.toArray(".desktop-pic-sec-3:not(:first-child)")
 
 
+    gsap.set(photos, { yPercent: 101 })
+
+    const allPhotos = gsap.utils.toArray(".desktop-pic-sec-3")
+
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 651px)", () => {
+
+        console.log("desktop")
+
+        ScrollTrigger.create({
+            trigger: ".sec-3",
+            start: "top top",
+            end: "bottom bottom",
+            pin: ".right-sec-3"
+        })
+
+        details.forEach((detail, index) => {
+
+            let headline = detail.querySelector("h1")
+            let animation = gsap.timeline()
+                .to(photos[index], { yPercent: 0 })
+                .set(allPhotos[index], { autoAlpha: 0 })
+            ScrollTrigger.create({
+                trigger: headline,
+                start: "top 80%",
+                end: "top 50%",
+                animation: animation,
+                scrub: true,
+                markers: false
+            })
+        })
+    });
+
+}
+rides()
