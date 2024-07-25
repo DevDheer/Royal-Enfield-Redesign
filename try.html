@@ -17,85 +17,24 @@
         }
 
         body {
+            font-family: 'Rushford clean';
             overflow-x: hidden;
         }
-
-        .test-ride {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            padding: 5vw;
-        }
-
-        .test-ride h2 {
-            font-family: 'Rushford Clean';
-            font-size: 5vw;
-            line-height: 5vw;
-            font-weight: 500;
-            color: #fff;
-        }
-
-        .test-img {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            background-image: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(https://www.royalenfield.com/content/dam/royal-enfield/india/home/locate-us/desktop/service-centres.jpg);
-            background-position: center;
-            background-size: cover;
-            z-index: -9;
-        }
-
-        .button {
-    position: relative;
-    margin-top: 1vw;
-    background-color: #fff;
-    padding: .9vw 5vw;
-    border-radius: 1vw;
-    color: #000;
-    transition: color .4s ease;
-}
-
-.button::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    background-color: #F1A501;
-    top: 0;
-    left: 0;
-    border-radius: 1vw;
-    transition: width .4s ease;
-}
-
-.button:hover::after {
-    width: 100%;
-}
-
-.button:hover {
-    color: #fff;
-}
-
-.button h3 {
-    position: relative;
-    font-size: 1.2vw;
-    line-height: 1vw;
-    font-weight: 500;
-    z-index: 999;
-}
     </style>
 </head>
 
 <body>
-    <div class="test-ride">
-        <h2 class="test-ride-line1">For Everything That Your</h2>
-        <h2 class="test-ride-line2">Motorcycles May Need</h2>
-        <span class="button"><h3>Book Service Now</h3></span>
-        <div class="test-img"></div>
-    </div>
+    
+    <section class="sec-3">
+        <div class="header-sec-3">
+            <h1 class="heading-sec-3">RIDES</h1>
+        </div>
+        <div class="sec-3-content">
+            <div class="right-sec-3">
+                
+            </div>
+        </div>
+    </section>
 
     <!-- GSAP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -103,30 +42,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
     <script>
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".test-ride",
-                start: "center center",
-                end: "bottom top",
-                scrub: 1,
-                pin: true
-            }
-        })
-
-
-            .from(".test-img", {
-                x: innerWidth * 1,
-                rotate: 50
-            })
-            .from(".test-ride-line1", {
-                x: innerWidth * 1
-            })
-            .from(".test-ride-line2", {
-                x: innerWidth * -1
-            })
-            .from(".test-ride .button", {
-                x: innerWidth * -1
-            })
+        
 
 
     </script>
