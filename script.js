@@ -3,7 +3,7 @@ function scrolltotop() {
     Scroll.scrollTo(0, 0)
 }
 
-// Scroll.scrollTo(0, 0)
+Scroll.scrollTo(0, 0)
 
 function loader() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -347,10 +347,11 @@ function scrolltrigger() {
     // sec-2
     gsap.to('.video-sec-2 ', {
         scrollTrigger: {
-            trigger: '.video-sec-2',
-            start: 'top center',
+            trigger: '.sec-2',
+            start: 'top top',
             end: 'bottom center',
-            scrub: true,
+            scrub: 2,
+            pin: true,
         },
         scale: 1.5,
     });
@@ -461,71 +462,28 @@ function scrolltrigger() {
         scale: 0,
     });
 
-    // sec-5
 
-    function sec5() {
-        const mediaQuery = window.matchMedia("(max-width: 768px)");
-    
-        let sec5Animations = [];
-    
-        function applyGsapAnimations() {
-            if (!mediaQuery.matches) {
-                // Define the animations only if the screen size is greater than 768px
-                const animation1 = gsap.from('.goa-garage-cafe', {
-                    scrollTrigger: {
-                        trigger: ".sec-5",
-                        start: 'top 15%',
-                        end: 'top 100%',
-                        scrub: 5,
-                        pin: true,
-                    },
-                    rotate: 36,
-                    scale: 0,
-                });
-    
-                const animation2 = gsap.to('.sec5-bgs', {
-                    scrollTrigger: {
-                        trigger: ".sec-5",
-                        scrub: 2,
-                        pin: true,
-                    },
-                    x: "-100%",
-                });
-    
-                sec5Animations.push(animation1.scrollTrigger, animation2.scrollTrigger);
-            } else {
-                // Kill only the specific animations when the screen size is 768px or less
-                sec5Animations.forEach(trigger => trigger.kill());
-                sec5Animations = [];
-            }
-        }
-    
-        // Apply animations on initial load
-        applyGsapAnimations();
-    
-        // Re-apply animations on window resize
-        mediaQuery.addListener(applyGsapAnimations);
-    }
-    
-    // Call the function to initialize
-    sec5();
-    
+    gsap.from('.goa-garage-cafe', {
+        scrollTrigger: {
+            trigger: ".sec-5",
+            start: 'top 15%',
+            end: 'top 100%',
+            scrub: 5,
+            pin: true,
+        },
+        rotate: 36,
+        scale: 0,
+    })
 
-    // sec-6
-    // gsap.from('.sec-5 h1, .sec-5 img', {
-    //     scrollTrigger: {
-    //         trigger: ".sec-5",
-    //         scrub: 1,
-    //         start: 'top center',
-    //         end: "top 100%",
-    //         scrub: 3,
-    //     },
-    //     y: 100,
-    //     opacity: 0,
-    //     stagger: 0.05,
-    //     duration: 1.5,
-    //     ease: 'elastic.out(1,1)',
-    // });
+    gsap.to('.sec5-bgs', {
+        scrollTrigger: {
+            trigger: ".sec-5",
+            scrub: 2,
+            pin: true,
+        },
+        x: "-100%",
+    })
+
 
     // sec-6
     gsap.from('.header-sec-6', {
@@ -537,7 +495,6 @@ function scrolltrigger() {
         },
         opacity: 0,
         scale: 0,
-        ease: 'elastic.out(1,0.9)',
     });
 
     gsap.from('.row-image img', {
@@ -553,40 +510,17 @@ function scrolltrigger() {
     });
 
     // footer
-    gsap.to('.footer', {
-        zIndex: 1,
-        duration: .5,
-        scrollTrigger: {
-            trigger: '.sec-6',
-            start: 'bottom 100vw',
-            end: ' bottom 100vw',
-            scrub: true
-        },
-    })
 
     gsap.from('.bottom-top h1 span', {
         scrollTrigger: {
-            trigger: '.sec-6',
-            start: 'bottom 130vw',
-            end: ' bottom 100%',
+            trigger: '.footer',
+            start: 'top 10%',
+            end: ' bottom bottom',
             scrub: 2,
         },
-        y: 100,
+        y: 50,
         opacity: 0,
-        stagger: 0.1,
-        duration: .5,
-    })
-
-    gsap.from('.bottom-bottom, .bottom-top', {
-        scrollTrigger: {
-            trigger: '.sec-6',
-            start: 'bottom 130vw',
-            end: ' bottom 100%',
-            scrub: 2,
-        },
-        y: 100,
-        opacity: 0,
-        duration: .5,
+        stagger: 0.2,
     })
 }
 scrolltrigger()
