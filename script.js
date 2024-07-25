@@ -474,26 +474,53 @@ function scrolltrigger() {
 
     // sec-5
 
-    gsap.from('.goa-garage-cafe', {
-        scrollTrigger: {
-            trigger: ".sec-5",
-            start: 'top 15%',
-            end: 'top 100%',
-            scrub: 5,
-            pin: true,
-        },
-        rotate: 36,
-        scale: 0,
-    })
-
-    gsap.to('.sec5-bgs', {
-        scrollTrigger: {
-            trigger: ".sec-5",
-            scrub: 2,
-            pin: true,
-        },
-        x: "-100%",
-    })
+    function sec5() {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+    
+        let sec5Animations = [];
+    
+        function applyGsapAnimations() {
+            if (!mediaQuery.matches) {
+                // Define the animations only if the screen size is greater than 768px
+                const animation1 = gsap.from('.goa-garage-cafe', {
+                    scrollTrigger: {
+                        trigger: ".sec-5",
+                        start: 'top 15%',
+                        end: 'top 100%',
+                        scrub: 5,
+                        pin: true,
+                    },
+                    rotate: 36,
+                    scale: 0,
+                });
+    
+                const animation2 = gsap.to('.sec5-bgs', {
+                    scrollTrigger: {
+                        trigger: ".sec-5",
+                        scrub: 2,
+                        pin: true,
+                    },
+                    x: "-100%",
+                });
+    
+                sec5Animations.push(animation1.scrollTrigger, animation2.scrollTrigger);
+            } else {
+                // Kill only the specific animations when the screen size is 768px or less
+                sec5Animations.forEach(trigger => trigger.kill());
+                sec5Animations = [];
+            }
+        }
+    
+        // Apply animations on initial load
+        applyGsapAnimations();
+    
+        // Re-apply animations on window resize
+        mediaQuery.addListener(applyGsapAnimations);
+    }
+    
+    // Call the function to initialize
+    sec5();
+    
 
     // sec-6
     // gsap.from('.sec-5 h1, .sec-5 img', {
