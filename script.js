@@ -148,17 +148,16 @@ function menutl() {
     })
 
     navmenutl.from('.menu-header', {
-        y: 30,
         opacity: 0,
         stagger: 0.05,
     })
 
     navmenutl.from('.circle-menu', {
-        display:'none',
+        display: 'none',
         rotate: '-360deg',
         duration: 1,
         ease: Expo.easeInOut,
-    },'a')
+    }, 'a')
 
     navmenutl.from('.menu-resposnive-links li', {
         y: 100,
@@ -166,14 +165,14 @@ function menutl() {
         duration: 1,
         stagger: 0.05,
         ease: Expo.easeInOut,
-    },'a')
+    }, 'a')
 
     navmenutl.from('.bg-img-menu', {
         y: '100%',
         opacity: 0,
         duration: 1,
         ease: Expo.easeInOut,
-    },'a')
+    }, 'a')
 
     navmenutl.from('.img-menu', {
         y: -100,
@@ -196,7 +195,7 @@ function menutl() {
     })
 
 
-    function menu(){
+    function menu() {
         const menulink1 = document.querySelector('.menu-link-1')
         const menulink2 = document.querySelector('.menu-link-2')
         const menulink3 = document.querySelector('.menu-link-3')
@@ -334,20 +333,27 @@ function menutl() {
 menutl()
 
 function scrolltrigger() {
-
-
     gsap.from('.sec-1-header', {
         scrollTrigger: {
-            trigger: '.sec-1',
-            start: 'top 90%',
-            end: 'top 100%',
-            scrub: 2,
+            trigger: ".sec-1",
+            scrub: 1,
+            start: 'top 80%',
+            end: "top 100%",
         },
-        y: 100,
+        y: 90,
         opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-    });
+    })
+    gsap.from('.bike', {
+        scrollTrigger: {
+            trigger: ".sec-1",
+            start: 'top 80%',
+            end: "top 100%",
+            scrub: true,
+        },
+        y: 90,
+        opacity: 0,
+        stagger: 0.05
+    })
 
     // sec-2
     gsap.to('.video-sec-2 ', {
@@ -371,18 +377,16 @@ function scrolltrigger() {
         stagger: 0.1
     });
 
-    gsap.from('.sec-2 p, .sec-2 .btn', {
+    gsap.from('.sec-2 p, .sec-2 .button', {
         scrollTrigger: {
             trigger: ".sec-2",
             scrub: 1,
             start: 'top center',
             end: "top 100%",
-            scrub: 3,
         },
         y: 90,
         opacity: 0,
         stagger: 0.05,
-        ease: 'elastic.out(1,0.5)',
     })
     // sec-3
 
@@ -480,7 +484,7 @@ function scrolltrigger() {
         },
         rotate: 36,
         scale: 0,
-    })  
+    })
 
     gsap.to('.sec5-bgs', {
         scrollTrigger: {
@@ -489,7 +493,7 @@ function scrolltrigger() {
             pin: true,
         },
         x: "-100%",
-    }) 
+    })
 
     // sec-6
     // gsap.from('.sec-5 h1, .sec-5 img', {
@@ -594,7 +598,7 @@ function cursorfollower() {
         gsap.to(cursorfollower, {
             opacity: 0,
             duration: .5,
-            scale:0,
+            scale: 0,
         });
     })
     // cursoreffect1
@@ -741,26 +745,6 @@ function marquee() {
 }
 marquee()
 
-function motorcyclesanimation() {
-    var elemC = document.querySelector(".motorcycles")
-    var fixed = document.querySelector(".motorcycles-image")
-    elemC.addEventListener("mouseenter", function () {
-        fixed.style.display = "block"
-    })
-    elemC.addEventListener("mouseleave", function () {
-        fixed.style.display = "none"
-    })
-
-    var elems = document.querySelectorAll(".motorcycles")
-    elems.forEach(function (e) {
-        e.addEventListener("mouseenter", function () {
-            var image = e.getAttribute("data-image")
-            fixed.style.backgroundImage = `url(${image})`;
-        })
-    })
-
-}
-
 function accessories() {
     let next = document.querySelector('#next')
     let previous = document.querySelector('#previous')
@@ -780,18 +764,6 @@ function accessories() {
 }
 accessories()
 
-function bikes() {
-    const bike = document.querySelector('.motorcycle')
-    const bikeimage = document.querySelectorAll('.img-motorcycle')
-
-    window.addEventListener('mousemove', (e) => {
-        gsap.to(bikeimage, {
-            x: e.clientX - 600,
-            rotation: e.movementX * 0.5,
-        })
-    })
-}
-bikes()
 
 function gallery() {
     document.querySelectorAll('#gallery-img').forEach(galleryimg => {
@@ -827,15 +799,15 @@ function gallery() {
 
     gallery1.forEach(gallery1img => {
         gallery1img.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
+
+            gsap.to('.main', {
+                backgroundColor: '#101010',
+            })
         })
     })
 
     // gallery 2
-    
+
     gallery2.forEach(gallery2img => {
         gallery2img.addEventListener('mouseenter', () => {
             gsap.to('.main', {
@@ -846,15 +818,15 @@ function gallery() {
 
     gallery2.forEach(gallery2img => {
         gallery2img.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
+
+            gsap.to('.main', {
+                backgroundColor: '#101010',
+            })
         })
     })
 
     // gallery 3
-    
+
     gallery3.forEach(gallery3img => {
         gallery3img.addEventListener('mouseenter', () => {
             gsap.to('.main', {
@@ -865,15 +837,15 @@ function gallery() {
 
     gallery3.forEach(gallery3img => {
         gallery3img.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
+
+            gsap.to('.main', {
+                backgroundColor: '#101010',
+            })
         })
     })
 
     // gallery 4
-    
+
     gallery4.forEach(gallery4img => {
         gallery4img.addEventListener('mouseenter', () => {
             gsap.to('.main', {
@@ -884,82 +856,100 @@ function gallery() {
 
     gallery4.forEach(gallery4img => {
         gallery4img.addEventListener('mouseleave', () => {
-            
-        gsap.to('.main', {
-            backgroundColor: '#101010',
-        })
+
+            gsap.to('.main', {
+                backgroundColor: '#101010',
+            })
         })
     })
 
 }
 gallery()
 
-function bikes(){
 
-    const bike = document.querySelectorAll('.bike')
+function bikes() {
 
-    // Add event listener to each bikescontainer
-    bike.forEach(bikescontainer => {
-        bikescontainer.addEventListener('click', () => {
-            gsap.to(bikescontainer, {
-                width: '50vw',
-                duration: .4
-            })
-            gsap.to(bikescontainer.querySelector('.inner-content'), {
-                display: 'block',
-                delay: -0.5
-            })
+    window.addEventListener('load', checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
 
-            gsap.to(bikescontainer.querySelector('.outer-content'), {
-                rotate: 0
-            })
+    const bike = document.querySelectorAll('.bike');
+
+    function animateBike() {
+        bike.forEach(bikescontainer => {
+            bikescontainer.addEventListener('click', onClick);
+            bikescontainer.addEventListener('mouseleave', onMouseLeave);
+            bikescontainer.addEventListener('mouseenter', onMouseEnter);
         });
-    });
+    }
 
-
-    bike.forEach(bikescontainer => {
-        bikescontainer.addEventListener('mouseleave', () => {
-            gsap.to(bikescontainer, {
-                width: '17vw',
-                scale: 1,
-                duration: .4
-            })
-
-            gsap.to(bikescontainer.querySelector('.inner-content'), {
-                display: 'none',
-                delay: -0.5
-            })
-
-            gsap.to(bikescontainer.querySelector('.outer-content'), {
-                rotate: -90,
-            })
+    function removeAnimation() {
+        bike.forEach(bikescontainer => {
+            bikescontainer.removeEventListener('click', onClick);
+            bikescontainer.removeEventListener('mouseleave', onMouseLeave);
+            bikescontainer.removeEventListener('mouseenter', onMouseEnter);
         });
-    });
+    }
 
-    bike.forEach(bikescontainer => {
-        bikescontainer.addEventListener('mouseenter', () => {
-            gsap.to(bikescontainer, {
-                width: '17vw',
-                scale: 1.03,
-                duration: .4
-            })
+    function onClick() {
+        gsap.to(this, {
+            width: '50vw',
+            duration: 0.4
         });
-    });
+        gsap.to(this.querySelector('.inner-content'), {
+            display: 'block',
+            delay: -0.5
+        });
+        gsap.to(this.querySelector('.outer-content'), {
+            rotate: 0
+        });
+    }
+
+    function onMouseLeave() {
+        gsap.to(this, {
+            width: '17vw',
+            scale: 1,
+            duration: 0.4
+        });
+        gsap.to(this.querySelector('.inner-content'), {
+            display: 'none',
+            delay: -0.5
+        });
+        gsap.to(this.querySelector('.outer-content'), {
+            rotate: -90,
+        });
+    }
+
+    function onMouseEnter() {
+        gsap.to(this, {
+            width: '17vw',
+            scale: 1.03,
+            duration: 0.4
+        });
+    }
+
+    function checkScreenSize() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 769) {
+            removeAnimation();
+        } else {
+            animateBike();
+        }
+    }
 }
 bikes()
 
-function cursorclicking() { 
+function cursorclicking() {
     document.addEventListener('click', function (e) {
-    const effectContainer = document.getElementById('cursor-effect-container');
-    const effect = document.createElement('div');
-    effect.className = 'click-effect';
-    effect.style.left = `${e.pageX - 10}px`;
-    effect.style.top = `${e.pageY - 10}px`;
-    effectContainer.appendChild(effect);
+        const effectContainer = document.getElementById('cursor-effect-container');
+        const effect = document.createElement('div');
+        effect.className = 'click-effect';
+        effect.style.left = `${e.pageX - 10}px`;
+        effect.style.top = `${e.pageY - 10}px`;
+        effectContainer.appendChild(effect);
 
-    setTimeout(() => {
-      effect.remove();
-    }, 600);
-  });
+        setTimeout(() => {
+            effect.remove();
+        }, 600);
+    });
 }
-cursorclicking(1)
+cursorclicking()

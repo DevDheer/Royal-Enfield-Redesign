@@ -165,7 +165,7 @@ li {
 }
 
 .home {
-    height: 120vh;
+    height: 100vh;
 }
 
 .hover-text {
@@ -559,7 +559,8 @@ li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 65vw;
+    height: 60vw;
+    background-color: #101010;
     width: 100vw;
     overflow: hidden;
 }
@@ -570,7 +571,6 @@ li {
     justify-content: space-between;
     gap: 75vw;
     padding: 0 1vw;
-    height: 8vw;
     border-bottom: 1px solid #fff;
     height: 5vw;
     margin-bottom: 1vw;
@@ -604,6 +604,7 @@ li {
 
 .bike {
     position: relative;
+    width: 18vw;
     height: 50vw;
     background-position: center;
     background-size: cover;
@@ -634,11 +635,11 @@ li {
 }
 
 .outer-content {
+    height: 50vw;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vw;
     transform: rotate(-90deg);
     transition: transform .4s ease;
 }
@@ -681,7 +682,8 @@ li {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 12vw;
 }
 
 .content-sec-2 h1 {
@@ -852,7 +854,6 @@ li {
 .sec-4 {
     height: 100vh;
     width: 100%;
-    margin-top: 3vw;
 }
 
 .header-accessories {
@@ -1475,6 +1476,37 @@ li {
         width: 90vw;
         height: 90vw;
     }
+
+
+    .sec-1-header h1 {
+        font-size: 3vw;
+    }
+
+    .sec-1-header p {
+        font-size: 1.1vw;
+        line-height: 1.5vw;
+    }
+
+    .sec-1-header {
+        gap: 70vw;
+    }
+
+    .content-sec-2 h1 {
+        font-size: 6vw;
+    }
+
+    .content-sec-2 p {
+        font-size: 1.4vw;
+    }
+
+    .button h3{
+        top: .4vw;
+        font-size: 1.8vw;
+    }
+    .button {
+        padding: 1.2vw 4vw;
+        border-radius: 1vw;
+    }
 }
 
 @media (max-width: 810px) {
@@ -1572,12 +1604,15 @@ li {
     .cursor-follower {
         display: none;
     }
-    .menu-links-strips{
+
+    .menu-links-strips {
         display: none;
     }
-    .circle-menu{
+
+    .circle-menu {
         border: 0px;
     }
+
     .menu-responsive {
         position: absolute;
         top: 50%;
@@ -1599,7 +1634,48 @@ li {
         color: #fff;
         font-style: italic;
     }
+
+    /* sec-1 */
+    .sec-1 {
+        height: 100%;
+    }
+
+    .sec-1-bikescontainer {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .bike {
+        width: 90vw;
+    }
+
+    .outer-content {
+        transform: rotate(0deg);
+    }
+
+    .inner-content {
+        display: block;
+    }
+
+    .inner-content h3 {
+        font-size: 3vw;
+    }
+
+    .inner-content p {
+        font-size: 1.6vw;
+        line-height: 2vw;
+    }
+
+    #bike-heading {
+        font-size: 6vw;
+    }
+
+    .sec-2 {
+        margin-top: 8vw;
+        margin-bottom: 12vw;
+    }
 }
+
 @media (max-width: 651px) {
     .logo-loader h1 {
         font-size: 10vw;
@@ -1633,6 +1709,23 @@ li {
 
     .menu-resposnive-links {
         font-size: 10vw;
+    }
+
+    .bike {
+        width: 80vw;
+    }
+
+    .sec-1-header h1 {
+        font-size: 4vw;
+    }
+
+    .sec-1-header p {
+        font-size: 1.3vw;
+        line-height: 1.7vw;
+    }
+
+    .sec-1-header {
+        gap: 60vw;
     }
 }
 
@@ -1682,5 +1775,26 @@ li {
 
     .menu-resposnive-links {
         font-size: 12vw;
+    }
+
+    .home {
+        height: 65vh;
+    }
+
+    .content-sec-2 h1 {
+        font-size: 7vw;
+    }
+
+    .content-sec-2 p {
+        font-size: 1.6vw;
+    }
+
+    .button h3{
+        top: .5vw;
+        font-size: 1.99vw;
+    }
+
+    .video-sec-2 video{
+        margin-top: 2vw;
     }
 }

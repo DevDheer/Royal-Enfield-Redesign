@@ -1,123 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Click Effect with Media Queries</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #333;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        background-color: lightblue;
-      }
-    }
-
-    @media (min-width: 601px) and (max-width: 1200px) {
-      body {
-        background-color: lightgreen;
-      }
-    }
-
-    @media (min-width: 1201px) {
-      body {
-        background-color: lightcoral;
-      }
-    }
-
-    #effect-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    .effect {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      transform: scale(0) rotate(0deg);
-      animation: clickEffect 1s ease-out, colorChange 1s linear;
-    }
-
-    .particle {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.8);
-      transform: translate(-50%, -50%);
-      animation: particleEffect 1s ease-out;
-    }
-
-    @keyframes clickEffect {
-      to {
-        transform: scale(4) rotate(720deg);
-        opacity: 0;
-      }
-    }
-
-    @keyframes colorChange {
-      0% { background: rgba(255, 0, 0, 0.5); }
-      25% { background: rgba(0, 255, 0, 0.5); }
-      50% { background: rgba(0, 0, 255, 0.5); }
-      75% { background: rgba(255, 255, 0, 0.5); }
-      100% { background: rgba(255, 0, 255, 0.5); }
-    }
-
-    @keyframes particleEffect {
-      to {
-        transform: translate(-50%, -50%) translate(100px, 0px);
-        opacity: 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Function Disable</title>
+    <style>
+        /* Example CSS for responsiveness */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-  <div id="effect-container"></div>
-  <script>
-    document.addEventListener('click', function (e) {
-      const effectContainer = document.getElementById('effect-container');
+    <div class="container">
+        <button id="myButton">Click me</button>
+    </div>
 
-      // Create main effect
-      for (let i = 0; i < 5; i++) {
-        const effect = document.createElement('div');
-        effect.className = 'effect';
-        effect.style.left = `${e.pageX - 10}px`;
-        effect.style.top = `${e.pageY - 10}px`;
-        effect.style.animationDelay = `${i * 0.1}s`;
-        effectContainer.appendChild(effect);
+    <script>
+        // Function to be disabled on small screens
+        function myFunction() {
+            alert('Function executed!');
+        }
 
-        setTimeout(() => {
-          effect.remove();
-        }, 1000); // Duration must match the CSS animation duration
-      }
+        // Function to check screen size and disable function
+        function checkScreenSize() {
+            const screenWidth = window.innerWidth;
+            const button = document.getElementById('myButton');
 
-      // Create particles
-      for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = `${e.pageX}px`;
-        particle.style.top = `${e.pageY}px`;
-        const angle = Math.random() * 2 * Math.PI;
-        const radius = Math.random() * 100;
-        particle.style.transform = `translate(-50%, -50%) translate(${radius * Math.cos(angle)}px, ${radius * Math.sin(angle)}px)`;
-        effectContainer.appendChild(particle);
+            if (screenWidth < 600) { // Example threshold
+                button.removeEventListener('click', myFunction);
+                button.disabled = true;
+            } else {
+                button.addEventListener('click', myFunction);
+                button.disabled = false;
+            }
+        }
 
-        setTimeout(() => {
-          particle.remove();
-        }, 1000); // Duration must match the CSS animation duration
-      }
-    });
-  </script>
+        // Check screen size on load and on resize
+        window.addEventListener('load', checkScreenSize);
+        window.addEventListener('resize', checkScreenSize);
+    </script>
 </body>
 </html>
