@@ -343,17 +343,6 @@ function scrolltrigger() {
         y: 90,
         opacity: 0,
     })
-    gsap.from('.bike', {
-        scrollTrigger: {
-            trigger: ".sec-1",
-            start: 'top 80%',
-            end: "top 100%",
-            scrub: true,
-        },
-        y: 90,
-        opacity: 0,
-        stagger: 0.05
-    })
 
     // sec-2
     gsap.to('.video-sec-2 ', {
